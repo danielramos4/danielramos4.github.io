@@ -1,0 +1,166 @@
+/* Reset básico y estilos del cuerpo del documento */
+html, body {
+    height: 100%; 
+    margin: 0; 
+}
+
+body {
+    font-family: 'Quicksand', sans-serif; /* 'normal' no es necesario, y se utiliza 'sans-serif' como respaldo */
+    background-color: #011936;
+    color: #FFFBFC;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* Fuente personalizada */
+@font-face {
+    font-family: 'Quicksand'; 
+    src: url('font/Quicksand-Regular.otf') format('opentype'), 
+         url('font/Quicksand-Light.otf') format('opentype'); 
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Estilos para el header */
+header {
+    width: 100%; 
+    background-color: #465362;
+    color: #FFFBFC;
+    padding: 10px 20px;
+    text-align: center;
+    background-image: url(resources/background.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* 'auto' no garantiza cobertura total, 'cover' podría ser más adecuado */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+    box-sizing: border-box;
+}
+
+/* Estilos para las imágenes y la navegación dentro del header */
+header a img {
+    min-width: 150px;
+    max-width: 150px;
+    height: auto;
+    display: block;
+    margin: auto;
+}
+
+header nav {
+    text-align: center;
+}
+
+.nav-menu {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu li {
+    margin-right: 20px;
+}
+
+.nav-menu li a {
+    text-decoration: none;
+    color: #FFFBFC;
+    transition: color 0.3s ease;
+}
+
+.nav-menu li:last-child {
+    margin-right: 0;
+}
+
+.nav-menu li a:hover {
+    color: #ff9900;
+}
+
+/* Estilos para el main y sus elementos internos */
+main {
+    flex: 1;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: 60px;
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.intro, .main-content, .sidebar, .contact-section, .members {
+    margin: 50px;
+    align-items: center;
+}
+
+.intro, .main-content {
+    text-align: center;
+    margin-right: 20px;
+}
+
+/* Estilos para títulos y párrafos */
+h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFBFC;
+}
+
+h3 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #FFFBFC;
+    margin-bottom: 50px;
+    margin-top: 50px;
+}
+
+p {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Estilos para botones */
+button {
+    padding: 10px 20px;
+    background-color: rgb(245, 106, 106);
+    color: #333;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos para interacción con imágenes */
+img:hover {
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Estilos para el footer */
+footer {
+    background-color: #465362;
+    color: #FFFBFC;
+    padding: 10px 20px;
+    text-align: center;
+    margin-top: auto;
+    background-image: url(resources/background.png);
+    background-repeat: no-repeat;
+    background-size: cover; /* Igual que con el header, 'cover' es generalmente preferible */
+}
+
+/* Media queries para responsividad */
+@media (max-width: 768px) {
+
+    .container {
+        flex-direction: column;
+    }
+    .main-content {
+        margin-right: 0;
+    }
+    .carousel-inner,
+    .carousel-item img {
+        max-width: 100%;
+        width: auto;
+        height: auto;
+        object-fit: cover;
+    }
+}
