@@ -1,166 +1,660 @@
 /* Reset básico y estilos del cuerpo del documento */
-html, body {
-    height: 100%; 
-    margin: 0; 
+html,
+body {
+  height: 100%;
+  margin: 0;
 }
 
 body {
-    font-family: 'Quicksand', sans-serif; /* 'normal' no es necesario, y se utiliza 'sans-serif' como respaldo */
-    background-color: #011936;
-    color: #FFFBFC;
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
+  font-family: "Quicksand", sans-serif; /* 'normal' no es necesario, y se utiliza 'sans-serif' como respaldo */
+  background-color: rgb(2, 35, 77);
+  color: #fffbfc;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 /* Fuente personalizada */
 @font-face {
-    font-family: 'Quicksand'; 
-    src: url('font/Quicksand-Regular.otf') format('opentype'), 
-         url('font/Quicksand-Light.otf') format('opentype'); 
-    font-weight: normal;
-    font-style: normal;
+  font-family: "Quicksand";
+  src: url("font/Quicksand-Regular.otf") format("opentype"),
+    url("font/Quicksand-Light.otf") format("opentype");
+  font-weight: normal;
+  font-style: normal;
 }
 
 /* Estilos para el header */
 header {
-    width: 100%; 
-    background-color: #465362;
-    color: #FFFBFC;
-    padding: 10px 20px;
-    text-align: center;
-    background-image: url(resources/background.png);
-    background-repeat: no-repeat;
-    background-size: cover; /* 'auto' no garantiza cobertura total, 'cover' podría ser más adecuado */
-    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
-    box-sizing: border-box;
+  color: #fffbfc;
+  padding: 10px 20px;
+  text-align: center;
+  background: linear-gradient(rgba(2, 35, 77, 0.5), rgb(2, 35, 77)),
+    url("resources/background.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+}
+
+@media (min-width: 576px) {
+  header {
+    width: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  header {
+    width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+@media (min-width: 992px) {
+  header {
+    width: 100%;
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+@media (min-width: 1200px) {
+  header {
+    width: 100%;
+    padding-left: 60px;
+    padding-right: 60px;
+  }
 }
 
 /* Estilos para las imágenes y la navegación dentro del header */
 header a img {
-    min-width: 150px;
-    max-width: 150px;
-    height: auto;
-    display: block;
-    margin: auto;
+  min-width: 150px;
+  max-width: 150px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+
+header a img:hover {
+  animation: transform 1s ease;
 }
 
 header nav {
-    text-align: center;
+  text-align: center;
 }
 
 .nav-menu {
-    display: flex;
-    justify-content: center;
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-menu li {
-    margin-right: 20px;
+  margin-right: 20px;
 }
 
 .nav-menu li a {
-    text-decoration: none;
-    color: #FFFBFC;
-    transition: color 0.3s ease;
+  text-decoration: none;
+  color: #fffbfc;
+  transition: color 0.3s ease;
 }
 
 .nav-menu li:last-child {
-    margin-right: 0;
+  margin-right: 0;
 }
 
 .nav-menu li a:hover {
-    color: #ff9900;
+  color: #ff9900;
 }
 
 /* Estilos para el main y sus elementos internos */
 main {
-    flex: 1;
+  flex: 1;
 }
 
 .container {
-    display: flex;
-    justify-content: space-between;
-    align-items: start;
-    gap: 60px;
-    margin: 0 auto;
-    padding: 20px;
-    max-width: 1200px;
-    text-align: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+  gap: 60px;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 1200px;
+  text-align: center;
 }
 
-.intro, .main-content, .sidebar, .contact-section, .members {
-    margin: 50px;
-    align-items: center;
+.intro,
+.main-content,
+.sidebar,
+.contact-section,
+.members {
+  margin: 50px;
+  align-items: center;
 }
 
-.intro, .main-content {
-    text-align: center;
-    margin-right: 20px;
+.intro,
+.main-content {
+  text-align: center;
+  margin-right: 20px;
 }
 
 /* Estilos para títulos y párrafos */
 h1 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFFBFC;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fffbfc;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 h3 {
-    font-size: 24px;
-    font-weight: bold;
-    color: #FFFBFC;
-    margin-bottom: 50px;
-    margin-top: 50px;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fffbfc;
+  margin-bottom: 50px;
+  margin-top: 50px;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 p {
-    font-size: 16px;
-    line-height: 1.5;
+  font-size: 16px;
+  line-height: 1.5;
+  animation: fadeInUp 1.5s ease-out;
 }
 
 /* Estilos para botones */
 button {
-    padding: 10px 20px;
-    background-color: rgb(245, 106, 106);
-    color: #333;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+  padding: 10px 20px;
+  background-color: rgb(245, 106, 106);
+  color: #333;
+  text-decoration: none;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Added transition for transform */
+}
+
+button:hover {
+  transform: scale(1.1); /* Increase the size on hover */
 }
 
 /* Estilos para interacción con imágenes */
+img {
+  transition: transform 0.3s ease;
+}
+
 img:hover {
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  transform: scale(1.3);
 }
 
 /* Estilos para el footer */
 footer {
-    background-color: #465362;
-    color: #FFFBFC;
-    padding: 10px 20px;
-    text-align: center;
-    margin-top: auto;
-    background-image: url(resources/background.png);
-    background-repeat: no-repeat;
-    background-size: cover; /* Igual que con el header, 'cover' es generalmente preferible */
+  background-color: #465362;
+  color: #1a0d22;
+  padding: 10px 20px;
+  text-align: center;
+  margin-top: auto;
+  background: linear-gradient(rgba(2, 35, 77, 1), rgba(2, 35, 77, 0.5)),
+    url("resources/background.png");
+  background-repeat: no-repeat;
+  background-repeat: no-repeat;
+  background-size: cover; /* Igual que con el header, 'cover' es generalmente preferible */
+}
+
+.footer-box {
+  background-color: rgba(128, 128, 128, 0); /* Gris semitransparente */
+  margin-bottom: 1rem;
+  padding: 1rem;
+  border-radius: 5px; /* Bordes redondeados si se desea */
+}
+
+/* Si tienes links dentro de tu footer-box y quieres asegurarte de que sean visibles */
+.footer-box a.text-white {
+  text-decoration: none; /* Remueve el subrayado */
+}
+
+.footer-box a.text-white:hover {
+  font-size: 18px; /* Increase the font size on hover */
+  transition: font-size 0.3s ease; /* Add a transition for smoother animation */
 }
 
 /* Media queries para responsividad */
 @media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .main-content {
+    margin-right: 0;
+  }
+  .carousel-inner,
+  .carousel-item img {
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    object-fit: cover;
+  }
+
+  /* Media queries para responsividad */
+  @media (max-width: 768px) {
+    header {
+      padding: 5px 10px; /* Menor padding en dispositivos móviles para el encabezado */
+    }
+
+    header a img {
+      min-width: 100px; /* Tamaño más pequeño para el logo en dispositivos móviles */
+      max-width: 100px;
+    }
+
+    .nav-menu {
+      flex-direction: column; /* Apila los elementos de la navegación verticalmente */
+      align-items: center;
+    }
+
+    .nav-menu li {
+      margin: 5px 0; /* Aumenta el espacio entre elementos de navegación en dispositivos móviles */
+    }
+
+    .nav-menu li a {
+      font-size: 0.8rem; /* Reduce el tamaño de la fuente de los enlaces en el menú */
+    }
+
+    .intro,
+    .main-content,
+    .sidebar,
+    .contact-section,
+    .members {
+      margin: 20px; /* Menos margen en dispositivos móviles */
+    }
+
+    h1,
+    h3 {
+      font-size: 20px; /* Tamaño de fuente más pequeño para títulos en dispositivos móviles */
+    }
+
+    p {
+      font-size: 14px; /* Tamaño de fuente más pequeño para párrafos en dispositivos móviles */
+    }
+
+    img {
+      max-width: 100%; /* Asegura que las imágenes no sobrepasen su contenedor */
+      height: auto; /* Mantiene la proporción de las imágenes al escalar */
+    }
 
     .container {
-        flex-direction: column;
+      padding: 10px;
+      flex-direction: column; /* Alinea elementos en columna en dispositivos móviles */
+      gap: 20px; /* Reduce el espacio entre elementos */
     }
-    .main-content {
-        margin-right: 0;
+
+    /* Ajustes adicionales para el footer si es necesario */
+    footer {
+      padding: 5px 10px; /* Menor padding en el footer para dispositivos móviles */
     }
-    .carousel-inner,
-    .carousel-item img {
-        max-width: 100%;
-        width: auto;
-        height: auto;
-        object-fit: cover;
-    }
+  }
+
+  /* Puedes agregar más media queries para otros tamaños de pantalla si es necesario */
+}
+
+.card-body {
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); /* Fondo blanco semitransparente para legibilidad */
+}
+
+.btn_primary {
+  transition: transform 0.3s ease; /* Add a transition for smoother animation */
+}
+
+.btn_primary:hover {
+  transform: scale(1.1); /* Increase the size of the button on hover */
+}
+
+.hero-section {
+  background: linear-gradient(rgba(2, 35, 77, 0), rgb(2, 35, 77)),
+    url("resources/hero-bg.png") no-repeat center center,
+    linear-gradient(rgba(2, 35, 77, 1), rgb(2, 35, 77, 0));
+  background-size: cover;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-container {
+  position: relative;
+  padding: 100px 50px;
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); /* Un fondo oscuro para contrastar con el texto */
+  border-radius: 15px;
+}
+
+.hero-title {
+  animation: fadeInUp 1.5s ease-out;
+}
+
+.hero-subtitle {
+  animation: fadeInUp 2s ease-out;
+}
+
+.hero-btn {
+  color: #fffbfc;
+  animation: pulse 2s infinite;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0.7);
+  }
+  70% {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px 20px rgba(0, 123, 255, 0);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+@keyframes pulse_logo {
+  0% {
+    transform: scale(1);
+  }
+  70% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.news-card .card {
+  max-width: 350px; /* Ajusta esto según tu diseño específico */
+  margin: auto; /* Centra las tarjetas horizontalmente si son más estrechas que su contenedor */
+}
+
+.news-card .card-img-top {
+  width: 100%; /* Asegura que la imagen ocupe todo el ancho de la tarjeta */
+  object-fit: cover; /* Mantiene la proporción de la imagen */
+  height: 200px; /* Ajusta la altura de la imagen */
+}
+
+.news-card,
+h5 {
+  font-weight: bolder;
+}
+
+/* Estilo de la pokédex */
+.pokedex__header {
+  background: rgba(2, 35, 77, 1);
+  min-height: 200px;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.pokedex__header-title {
+  color: rgb(127, 138, 163);
+  margin: 0 25px 0 10px;
+  text-align: left;
+}
+
+.pokedex__header-search {
+  margin: auto;
+}
+
+.pokedex__header-search form {
+  border-color: blue;
+  display: flex;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+
+.pokedex__header-search input {
+  height: 30px;
+  width: 100%;
+  margin-right: 20px;
+  border-radius: 5px;
+  border: none;
+  outline: none;
+}
+
+.pokedex__header-search form button {
+  width: 80px;
+  height: 80px;
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.pokedex__header-aline {
+  display: flex;
+  width: 150px;
+}
+
+.arrow-left {
+  width: 0;
+  height: 0;
+  border-top: 15px solid rgba(255, 0, 0, 0);
+  border-left: 15px solid rgba(49, 173, 18, 0);
+  border-bottom: 15px solid rgba(255, 251, 0, 0);
+  border-right: 15px solid rgb(97, 221, 159);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.order {
+  margin: auto;
+  padding: 5px;
+  color: #fff;
+}
+
+.arrow-right {
+  width: 0;
+  height: 0;
+  border-top: 15px solid rgba(255, 0, 0, 0);
+  border-left: 15px solid rgb(97, 221, 159);
+  border-bottom: 15px solid rgba(255, 251, 0, 0);
+  border-right: 15px solid rgba(255, 0, 0, 0);
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+/*Cartas de los pokemon*/
+
+.pokedex__pokemon-content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 2%;
+}
+
+.pokemon {
+  background-color: #eee;
+  border-radius: 20px;
+  box-shadow: 0 3px 15px rgba(100, 100, 100, 0.5);
+  margin: 10px;
+  padding: 20px;
+  text-align: center;
+  width: 200px;
+  animation: fadeInUp 1.5s ease-in;
+}
+
+.pokemon:hover {
+  transform: scale(1.2) rotate(5deg);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.pokemon .img-container {
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  text-align: center;
+  margin: auto;
+}
+
+.pokemon .img-container img {
+  margin-top: 20px;
+  max-width: 90%;
+}
+
+.pokemon .info {
+  margin-top: 20px;
+}
+
+.pokemon .number {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  font-size: 0.8em;
+  padding: 5px 10px;
+}
+
+.pokemon .name {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 15px 0 7px;
+  letter-spacing: 1px;
+}
+
+.pokemon .type {
+  background-color: rgba(0, 0, 0, 0.2);
+  border-radius: 10px;
+  margin: 7px 0;
+  padding: 5px 10px; /* Add padding to increase the size */
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin: auto;
+  width: 100%;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.753);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.items-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+}
+
+.items__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+.items__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  padding: 20px;
+}
+
+.item-card {
+  background-color: #5c5151;
+  border-radius: 8px;
+  padding: 10px;
+  width: 200px; /* Ancho más grande */
+  height: auto; /* Altura más baja */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.item-image img {
+  min-width: 100%;
+  height: auto;
+}
+
+.item-info {
+  text-align: center;
+}
+
+
+#map-container {
+  position: relative;
+  text-align: center;
+}
+
+#info-card {
+  background: white; /* Fondo blanco para la tarjeta */
+  color: black; /* Color de texto negro */
+  border: 1px solid #000;
+  border-radius: 10px;
+  padding: 20px;
+  position: fixed; /* Centrado en la pantalla */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%; /* Más grande */
+  max-width: 600px; /* Límite máximo de ancho */
+  min-height: 200px; /* Altura mínima */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6); /* Sombra para resaltar */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.5s, visibility 0.5s;
+  display: none;
+  z-index: 1050; /* Asegurarse de que está sobre el overlay */
+  font-size: 1.2rem; /* Tamaño de texto aumentado */
+}
+
+#info-card h2 {
+  margin-top: 0;
+  color: #333;
+  font-size: 2rem; /* Tamaño de título aumentado */
+}
+
+
+#info-card.show {
+  display: block; /* Asegura que el bloque está visible */
+  opacity: 1; /* Completa opacidad */
+  visibility: visible; /* Hace el elemento visible */
+}
+
+
+
+
+
+
+/* Sobreescribe la animación para la imagen dentro del #map-container */
+#map-container img {
+  animation: none; /* Esto desactiva la animación */
+  /* Otras propiedades para anular cualquier transformación o transición si es necesario */
+  transform: none;
+  transition: none;
+  border-radius: 100px;
+  box-shadow: #000;
 }

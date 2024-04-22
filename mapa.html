@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PokeTips</title>
+    <link rel="icon" href="resources/logo.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body>
+    <header class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-6 col-md-3">
+          <a href="index.html">
+            <img
+              src="resources/logo.png"
+              title="Pulsa para ir a la pagina principar!"
+            />
+          </a>
+        </div>
+        <div class="col-6 col-md-9">
+          <nav>
+            <ul class="nav-menu">
+              <li>
+                <a href="proyecto.html" title="Proyecto">
+                  <img
+                    src="resources/proyecto_header.png"
+                    alt="Proyecto"
+                    height="50"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="equipo.html" title="Nuestro equipo">
+                  <img
+                    src="resources/equipo_header.png"
+                    alt="Equipo"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="pokedex.html" title="Pokédex">
+                  <img
+                    src="resources/pokedex_header.png"
+                    alt="Pokédex"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="objetos.html" title="Objetos">
+                  <img
+                    src="resources/objetos_header.png"
+                    alt="Objetos"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="mapa.html" title="Mapa">
+                  <img
+                    src="resources/mapa_header.png"
+                    alt="Mapa"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="blank.html" title="Guía">
+                  <img
+                    src="resources/guia_header.png"
+                    alt="Guía"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <section style="padding: 2%; text-align: center">
+      <h1>Bienvenido al Mapa Interactivo de Kanto!</h1>
+      <p>¡Pulsa sobre cualquier ciudad/ruta para ver informaciónsobre ella!</p>
+    </section>
+    <div id="map-container" style="padding: 2%">
+      <img src="resources/kanto_map.png" usemap="#image-map" />
+
+      <map name="image-map">
+        <area
+          target=""
+          alt="Pueblo Paleta"
+          title="Pueblo Paleta"
+          href=""
+          coords="352,834,304,784"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ciudad Verde"
+          title="Ciudad Verde"
+          href=""
+          coords="299,597,359,657"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ciudad Plateada"
+          title="Ciudad Plateada"
+          href=""
+          coords="300,361,360,418"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Liga Pokémon"
+          title="Liga Pokémon"
+          href=""
+          coords="238,358,182,300"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Isla Canela"
+          title="Isla Canela"
+          href=""
+          coords="304,964,357,1013"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ciudad Azulona"
+          title="Ciudad Azulona"
+          href=""
+          coords="722,483,776,535"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ciudad Celeste"
+          title="Ciudad Celeste"
+          href=""
+          coords="900,301,964,361"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ciudad Azafrán"
+          title="Ciudad Azafrán"
+          href=""
+          coords="899,480,961,537"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ciudad Fucsia"
+          title="Ciudad Fucsia"
+          href=""
+          coords="781,843,846,900"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Pueblo Lavanda"
+          title="Pueblo Lavanda"
+          href=""
+          coords="1144,481,1200,540"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ciudad Carmín"
+          title="Ciudad Carmín"
+          href=""
+          coords="900,664,957,722"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Ruta 1"
+          title="Ruta 1"
+          href=""
+          coords="299,665,361,776"
+          shape="rect"
+        />
+        <area
+          target=""
+          alt="Calle Victoria"
+          title="Calle Victoria"
+          href=""
+          coords="179,415,239,414,241,599,293,599,295,663,177,661"
+          shape="poly"
+        />
+        <area
+          target=""
+          alt="Paseo Marítimo"
+          title="Paseo Marítimo"
+          href=""
+          coords="717,481,479,480,478,900,773,898,773,840,539,840,539,540,715,540"
+          shape="poly"
+        />
+      </map>
+    </div>
+
+    <div id="info-card" class="hidden">
+      <!-- La información del área cliqueada se mostrará aquí -->
+      <p id="info-text"></p>
+    </div>
+
+    <footer class="bg-dark text-white">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-box">
+              <h5>About PokeTips</h5>
+              <p>
+                Tu recurso confiable para consejos, guías y datos sobre Pokémon.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="footer-box">
+              <h5>Enlaces Rápidos</h5>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="nosotros.html" class="text-white">Conócenos</a>
+                </li>
+                <li><a href="contacto.html" class="text-white">Contacto</a></li>
+                <li>
+                  <a href="principiosDiseno.html" class="text-white"
+                    >Principios de Diseño</a
+                  >
+                </li>
+                <li><a href="proyecto.html" class="text-white">Proyecto</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="footer-box">
+              <h5>Contacto</h5>
+              <p>Correo: contacto@poketips.com</p>
+              <p>Twitter: @PokeTipsOfficial</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="footer-box">
+              <h5>FHIC 23-24 - POKETIPS | Todos los derechos reservados.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="mapa.js"></script>
+  </body>
+</html>

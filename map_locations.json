@@ -1,0 +1,58 @@
+{
+  "Pueblo Paleta": {
+    "nombre": "Pueblo Paleta",
+    "descripción": "Es el lugar donde inician los entrenadores su aventura. Hogar del Profesor Oak."
+  },
+  "Ciudad Verde": {
+    "nombre": "Ciudad Verde",
+    "descripción": "Una ciudad acogedora y tranquila. Es conocida por su gimnasio liderado por Brock."
+  },
+  "Ciudad Plateada": {
+    "nombre": "Ciudad Plateada",
+    "descripción": "Es famosa por la cueva Diglett y su gimnasio de tipo roca."
+  },
+  "Liga Pokémon": {
+    "nombre": "Liga Pokémon",
+    "descripción": "El último desafío de un entrenador, donde se enfrentan a los cuatro mejores entrenadores y al Campeón."
+  },
+  "Isla Canela": {
+    "nombre": "Isla Canela",
+    "descripción": "Una isla tropical cuyo gimnasio se especializa en el tipo fuego."
+  },
+  "Ciudad Azulona": {
+    "nombre": "Ciudad Azulona",
+    "descripción": "Una gran ciudad con una variedad de tiendas y el gimnasio liderado por Erika."
+  },
+  "Ciudad Celeste": {
+    "nombre": "Ciudad Celeste",
+    "descripción": "Conocida por su famoso puente y el gimnasio de tipo agua."
+  },
+  "Ciudad Azafrán": {
+    "nombre": "Ciudad Azafrán",
+    "descripción": "El hogar de Sylph S.A. y el gimnasio psíquico."
+  },
+  "Ciudad Fucsia": {
+    "nombre": "Ciudad Fucsia",
+    "descripción": "Esta ciudad alberga un Zoológico de Safari y un gimnasio de tipo veneno."
+  },
+  "Pueblo Lavanda": {
+    "nombre": "Pueblo Lavanda",
+    "descripción": "Un pueblo conocido por la Torre Pokémon, un cementerio de Pokémon."
+  },
+  "Ciudad Carmín": {
+    "nombre": "Ciudad Carmín",
+    "descripción": "Una ciudad portuaria donde los entrenadores pueden abordar el S.S. Anne."
+  },
+  "Ruta 1": {
+    "nombre": "Ruta 1",
+    "descripción": "La primera ruta que los entrenadores viajan después de dejar Pueblo Paleta."
+  },
+  "Calle Victoria": {
+    "nombre": "Calle Victoria",
+    "descripción": "El camino que lleva a la Liga Pokémon. Un desafío para cualquier entrenador."
+  },
+  "Paseo Marítimo": {
+    "nombre": "Paseo Marítimo",
+    "descripción": "Una bella zona costera que conecta varias ciudades importantes."
+  }
+}

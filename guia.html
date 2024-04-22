@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>PokeTips - Guía</title>
+    <link rel="icon" href="resources/logo.png" type="image/png" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-6 col-md-3">
+          <a href="index.html">
+            <img
+              src="resources/logo.png"
+              title="Pulsa para ir a la pagina principar!"
+            />
+          </a>
+        </div>
+        <div class="col-6 col-md-9">
+          <nav>
+            <ul class="nav-menu">
+              <li>
+                <a href="proyecto.html" title="Proyecto">
+                  <img
+                    src="resources/proyecto_header.png"
+                    alt="Proyecto"
+                    height="50"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="equipo.html" title="Nuestro equipo">
+                  <img
+                    src="resources/equipo_header.png"
+                    alt="Equipo"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="pokedex.html" title="Pokédex">
+                  <img
+                    src="resources/pokedex_header.png"
+                    alt="Pokédex"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="objetos.html" title="Objetos">
+                  <img
+                    src="resources/objetos_header.png"
+                    alt="Objetos"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="mapa.html" title="Mapa">
+                  <img
+                    src="resources/mapa_header.png"
+                    alt="Mapa"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+              <li>
+                <a href="blank.html" title="Guía">
+                  <img
+                    src="resources/guia_header.png"
+                    alt="Guía"
+                    height="40"
+                    width="auto"
+                  />
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <div id="vue-app" style="text-align: center; padding: 1%">
+      <guia-component></guia-component>
+    </div>
+
+    <footer class="bg-dark text-white">
+      <div class="container py-4">
+        <div class="row">
+          <div class="col-md-4">
+            <div class="footer-box">
+              <h5>About PokeTips</h5>
+              <p>
+                Tu recurso confiable para consejos, guías y datos sobre Pokémon.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="footer-box">
+              <h5>Enlaces Rápidos</h5>
+              <ul class="list-unstyled">
+                <li><a href="equipo.html" class="text-white">Conócenos</a></li>
+                <li><a href="pokedex.html" class="text-white">Pokédex</a></li>
+                <li><a href="blank.html" class="text-white">Objetos</a></li>
+                <li><a href="blank.html" class="text-white">Guía</a></li>
+                <li><a href="blank.html" class="text-white">Mapa</a></li>
+                <li><a href="proyecto.html" class="text-white">Proyecto</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="footer-box">
+              <h5>Contacto</h5>
+              <p>Correo: contacto@poketips.com</p>
+              <p>Twitter: @PokeTipsOfficial</p>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="footer-box">
+              <h5>FHIC 23-24 - POKETIPS | Todos los derechos reservados.</h5>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Vue.js -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.min.js"></script>
+
+    <script>
+      const data = {
+        ciudades: [
+          {
+            nombre: "Ciudad Plateada (Pewter City)",
+            descripcion:
+              "Una ciudad gris y rocosa famosa por su museo de ciencias naturales.",
+            gimnasio: {
+              lider: "Brock",
+              tipo: "Roca",
+              medalla: "Medalla Roca",
+              descripcion:
+                "Brock es un líder de gimnasio serio que usa Pokémon de tipo roca.",
+            },
+          },
+          {
+            nombre: "Ciudad Celeste (Cerulean City)",
+            descripcion: "Conocida por sus cascadas y el cercano Cabo Celeste.",
+            gimnasio: {
+              lider: "Misty",
+              tipo: "Agua",
+              medalla: "Medalla Cascada",
+              descripcion:
+                "Misty es una experta en Pokémon de tipo agua y una nadadora excepcional.",
+            },
+          },
+          {
+            nombre: "Ciudad Carmín (Vermilion City)",
+            descripcion:
+              "Una ciudad portuaria donde muchos barcos y cruceros atracan.",
+            gimnasio: {
+              lider: "Lt. Surge",
+              tipo: "Eléctrico",
+              medalla: "Medalla Trueno",
+              descripcion:
+                "El Teniente Surge es un ex-combatiente con un enérgico equipo de Pokémon eléctricos.",
+            },
+          },
+          {
+            nombre: "Ciudad Azulona (Celadon City)",
+            descripcion:
+              "Una vasta ciudad conocida por su centro comercial y casino.",
+            gimnasio: {
+              lider: "Erika",
+              tipo: "Planta",
+              medalla: "Medalla Arcoíris",
+              descripcion:
+                "Erika es tranquila y ama la naturaleza; utiliza Pokémon de tipo planta.",
+            },
+          },
+          {
+            nombre: "Ciudad Fucsia (Fuchsia City)",
+            descripcion:
+              "Ubicada al sur, es famosa por su zoológico de Safari.",
+            gimnasio: {
+              lider: "Koga",
+              tipo: "Veneno",
+              medalla: "Medalla Alma",
+              descripcion: "Koga es un ninja que usa Pokémon de tipo veneno.",
+            },
+          },
+          {
+            nombre: "Ciudad Azafrán (Saffron City)",
+            descripcion:
+              "El corazón de Kanto, dominado por la corporación Silph S.A.",
+            gimnasio: {
+              lider: "Sabrina",
+              tipo: "Psíquico",
+              medalla: "Medalla Pantano",
+              descripcion:
+                "Sabrina es una poderosa psíquica que utiliza Pokémon de tipo psíquico.",
+            },
+          },
+          {
+            nombre: "Ciudad Canela (Cinnabar Island)",
+            descripcion:
+              "Una isla que alberga un volcán activo y el laboratorio Pokémon.",
+            gimnasio: {
+              lider: "Blaine",
+              tipo: "Fuego",
+              medalla: "Medalla Volcán",
+              descripcion:
+                "Blaine es un científico que adora los acertijos y los Pokémon de tipo fuego.",
+            },
+          },
+          {
+            nombre: "Ciudad Verde (Viridian City)",
+            descripcion:
+              "Una ciudad tranquila cerca de Pueblo Paleta, conocida por su líder de gimnasio misterioso.",
+            gimnasio: {
+              lider: "Giovanni",
+              tipo: "Tierra",
+              medalla: "Medalla Tierra",
+              descripcion:
+                "Giovanni, el líder del Team Rocket, usa Pokémon de tipo tierra.",
+            },
+          },
+        ],
+        rutas: [
+          {
+            nombre: "Ruta 1",
+            descripcion:
+              "Conecta Pueblo Paleta con Ciudad Verde y está llena de Pokémon salvajes.",
+            pokemon: [
+              {
+                nombre: "Pidgey",
+                tipo: ["Normal", "Volador"],
+                descripcion:
+                  "Pidgey tiene un sentido de la orientación extremadamente desarrollado. Vuelve a su nido sin importar la distancia.",
+                url: "https://pokeapi.co/api/v2/pokemon/pidgey",
+              },
+              {
+                nombre: "Rattata",
+                tipo: ["Normal"],
+                descripcion:
+                  "Rattata es cauto como él solo. Hasta cuando duerme mueve las orejas para oír todos los ruidos.",
+                url: "https://pokeapi.co/api/v2/pokemon/rattata",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 2",
+            descripcion:
+              "Ruta arbolada que presenta un mayor desafío para los entrenadores novatos.",
+            pokemon: [
+              {
+                nombre: "Caterpie",
+                tipo: ["Bicho"],
+                descripcion:
+                  "Caterpie tiene un apetito voraz. Puede devorar hojas a un ritmo superior al de un Pokémon mucho mayor.",
+                url: "https://pokeapi.co/api/v2/pokemon/caterpie",
+              },
+              {
+                nombre: "Weedle",
+                tipo: ["Bicho", "Veneno"],
+                descripcion:
+                  "Weedle tiene un aguijón afilado en la cabeza que exuda veneno. El aguijón se usa para repeler a los atacantes.",
+                url: "https://pokeapi.co/api/v2/pokemon/weedle",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 3",
+            descripcion:
+              "Una ruta montañosa que requiere de un Pokémon que pueda cortar árboles para avanzar.",
+            pokemon: [
+              {
+                nombre: "Spearow",
+                tipo: ["Normal", "Volador"],
+                descripcion:
+                  "Spearow grazna con tanta fuerza que puede ser oído a más de 1 km de distancia. Si su enemigo se acerca, ataca con furiosos embates.",
+                url: "https://pokeapi.co/api/v2/pokemon/spearow",
+              },
+              {
+                nombre: "Ekans",
+                tipo: ["Veneno"],
+                descripcion:
+                  "Ekans se enrosca para descansar. Adoptando esta postura, puede responder rápidamente a una amenaza desde cualquier dirección con un ataque de látigo.",
+                url: "https://pokeapi.co/api/v2/pokemon/ekans",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 4",
+            descripcion:
+              "Ruta costera con acceso a la pesca y la posibilidad de encontrar Pokémon de tipo agua.",
+            pokemon: [
+              {
+                nombre: "Magikarp",
+                tipo: ["Agua"],
+                descripcion:
+                  "Magikarp es un Pokémon notorio por su debilidad, pero puede evolucionar en el poderoso Gyarados.",
+                url: "https://pokeapi.co/api/v2/pokemon/magikarp",
+              },
+              {
+                nombre: "Poliwag",
+                tipo: ["Agua"],
+                descripcion:
+                  "Poliwag tiene una piel muy suave que es demasiado resbaladiza para ser agarrada.",
+                url: "https://pokeapi.co/api/v2/pokemon/poliwag",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 5",
+            descripcion:
+              "Una ruta con un clima variable que afecta los tipos de Pokémon que aparecen según el tiempo.",
+            pokemon: [
+              {
+                nombre: "Oddish",
+                tipo: ["Planta", "Veneno"],
+                descripcion:
+                  "Oddish busca terreno fértil para plantarse durante la noche. Durante el día, Oddish se entierra en el suelo para absorber nutrientes usando todo el cuerpo.",
+                url: "https://pokeapi.co/api/v2/pokemon/oddish",
+              },
+              {
+                nombre: "Bellsprout",
+                tipo: ["Planta", "Veneno"],
+                descripcion:
+                  "Bellsprout es un Pokémon que puede balancear su cuerpo para moverse más rápido y capturar presas con sus ramas delgadas.",
+                url: "https://pokeapi.co/api/v2/pokemon/bellsprout",
+              },
+            ],
+          },
+          // Puedes continuar añadiendo rutas según el diseño de tu juego o aplicación.
+        ],
+      };
+    </script>
+
+    <!-- Componente de Vue para la guía -->
+    <script>
+      Vue.component("guia-component", {
+        template: `
+    <div>
+      <h1>Guía Pokémon</h1>
+      <a v-on:click="mostrarSeccion('ciudades')">
+        <img src="resources/ciudades_guia.png" alt="Ciudades">
+      </a>
+      <a v-on:click="mostrarSeccion('rutas')">
+        <img src="resources/rutas_guia.png" alt="Rutas">
+      </a>
+      <div v-if="seccionActiva === 'ciudades'">
+        <ul>
+          <a v-for="ciudad in data.ciudades" :key="ciudad.nombre">
+            <h2>{{ ciudad.nombre }}</h2>
+            <p>{{ ciudad.descripcion }}</p>
+            <h3>Gimnasio de {{ ciudad.gimnasio.lider }}</h3>
+            <p>{{ ciudad.gimnasio.descripcion }}</p>
+          </a>
+        </ul>
+      </div>
+      <div v-if="seccionActiva === 'rutas'">
+        <ul>
+          <a v-for="ruta in data.rutas" :key="ruta.nombre">
+            <h2>{{ ruta.nombre }}</h2>
+            <p>{{ ruta.descripcion }}</p>
+            <ul>
+              <a v-for="pokemon in ruta.pokemon" :key="pokemon.nombre" @click="obtenerPokemon(pokemon.url)">
+                {{ pokemon.nombre }} ({{ pokemon.tipo.join(', ') }})
+                <p>{{ pokemon.descripcion }}</p>
+                <!-- Elemento de imagen donde se muestra el sprite -->
+                <img :src="pokemonImagen" alt="Sprite de Pokémon">
+              </a>
+            </ul>
+          </a>
+        </ul>
+
+      </div>
+    </div>
+  `,
+        data() {
+          return {
+            seccionActiva: null,
+            data: data,
+            pokemonImagen: "", // URL de la imagen del Pokémon
+          };
+        },
+        methods: {
+          mostrarSeccion(seccion) {
+            this.seccionActiva = seccion;
+          },
+          obtenerPokemon(pokemonUrl) {
+            fetch(pokemonUrl)
+              .then((response) => response.json())
+              .then((data) => {
+                // Asigna la imagen del Pokémon obtenida de la API a la propiedad de tu objeto Pokémon
+                this.pokemonImagen = data.sprites.front_default;
+              })
+              .catch((error) => {
+                console.error("Error al obtener datos de Pokémon:", error);
+              });
+          },
+        },
+      });
+
+      new Vue({
+        el: "#vue-app",
+      });
+    </script>
+  </body>
+</html>
