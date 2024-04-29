@@ -13,83 +13,79 @@
   </head>
 
   <body>
-    <header class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-6 col-md-3">
-          <a href="index.html">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
             <img
               src="resources/logo.png"
-              title="Pulsa para ir a la pagina principar!"
+              alt="Logo"
+              style="max-width: 70px"
+              title="Pulsa para ir a la página principal!"
             />
           </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="pokedex.html"
+                ><img
+                  src="resources/pokedex_header.png"
+                  alt="Pokedex"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="objetos.html"
+                ><img
+                  src="resources/objetos_header.png"
+                  alt="Objetos"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="mapa.html"
+                ><img
+                  src="resources/mapa_header.png"
+                  alt="Mapa"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="guia.html"
+                ><img
+                  src="resources/guia_header.png"
+                  alt="Guia"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="proyecto.html"
+                ><img
+                  src="resources/proyecto_header.png"
+                  alt="Proyecto"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="equipo.html"
+                ><img
+                  src="resources/equipo_header.png"
+                  alt="Equipo"
+                  height="50"
+                  width="auto"
+              /></a>
+            </div>
+          </div>
         </div>
-        <div class="col-6 col-md-9">
-          <nav>
-            <ul class="nav-menu">
-              <li>
-                <a href="proyecto.html" title="Proyecto">
-                  <img
-                    src="resources/proyecto_header.png"
-                    alt="Proyecto"
-                    height="50"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="equipo.html" title="Nuestro equipo">
-                  <img
-                    src="resources/equipo_header.png"
-                    alt="Equipo"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="pokedex.html" title="Pokédex">
-                  <img
-                    src="resources/pokedex_header.png"
-                    alt="Pokédex"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="objetos.html" title="Objetos">
-                  <img
-                    src="resources/objetos_header.png"
-                    alt="Objetos"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="mapa.html" title="Mapa">
-                  <img
-                    src="resources/mapa_header.png"
-                    alt="Mapa"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="guia.html" title="Guía">
-                  <img
-                    src="resources/guia_header.png"
-                    alt="Guía"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      </nav>
     </header>
 
     <main>
@@ -147,11 +143,11 @@
         </div>
       </section>
 
-      <section class="news-section bg-light py-5">
+      <section class="news-section py-5">
         <div class="container">
           <h2
             class="text-center mb-4"
-            style="color: #011936; font-weight: bolder"
+            style="color: #011936; font-weight: bolder; text-shadow: 1rem"
           >
             Últimas Noticias
           </h2>

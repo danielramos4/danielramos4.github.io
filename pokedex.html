@@ -12,103 +12,92 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header class="container-fluid">
-      <div class="row align-items-center">
-        <div class="col-6 col-md-3">
-          <a href="index.html">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="index.html">
             <img
               src="resources/logo.png"
-              title="Pulsa para ir a la pagina principar!"
+              alt="Logo"
+              style="max-width: 70px"
+              title="Pulsa para ir a la página principal!"
             />
           </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav ms-auto">
+              <a class="nav-link" href="pokedex.html"
+                ><img
+                  src="resources/pokedex_header.png"
+                  alt="Pokedex"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="objetos.html"
+                ><img
+                  src="resources/objetos_header.png"
+                  alt="Objetos"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="mapa.html"
+                ><img
+                  src="resources/mapa_header.png"
+                  alt="Mapa"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="guia.html"
+                ><img
+                  src="resources/guia_header.png"
+                  alt="Guia"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="proyecto.html"
+                ><img
+                  src="resources/proyecto_header.png"
+                  alt="Proyecto"
+                  height="50"
+                  width="auto"
+              /></a>
+              <a class="nav-link" href="equipo.html"
+                ><img
+                  src="resources/equipo_header.png"
+                  alt="Equipo"
+                  height="50"
+                  width="auto"
+              /></a>
+            </div>
+          </div>
         </div>
-        <div class="col-6 col-md-9">
-          <nav>
-            <ul class="nav-menu">
-              <li>
-                <a href="proyecto.html" title="Proyecto">
-                  <img
-                    src="resources/proyecto_header.png"
-                    alt="Proyecto"
-                    height="50"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="equipo.html" title="Nuestro equipo">
-                  <img
-                    src="resources/equipo_header.png"
-                    alt="Equipo"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="pokedex.html" title="Pokédex">
-                  <img
-                    src="resources/pokedex_header.png"
-                    alt="Pokédex"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="objetos.html" title="Objetos">
-                  <img
-                    src="resources/objetos_header.png"
-                    alt="Objetos"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="mapa.html" title="Mapa">
-                  <img
-                    src="resources/mapa_header.png"
-                    alt="Mapa"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-              <li>
-                <a href="guia.html" title="Guía">
-                  <img
-                    src="resources/guia_header.png"
-                    alt="Guía"
-                    height="40"
-                    width="auto"
-                  />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </div>
-      </div>
+      </nav>
     </header>
 
     <div class="pokedex-container">
       <div class="pokedex__header">
         <div class="pokedex__header-title">
           <h1>POKEDEX</h1>
+          <p>
+            Encuentra información sobre todos los Pokémon, pulsa sobre alguno
+            para ver más información sobre él.
+          </p>
         </div>
-        <div class="pokedex__header-search">
-          <form action="" id="searchPokemon">
-            <input type="text" id="pokemon" />
-            <button>
-              <img
-                src="resources/pokeball.png"
-                alt="pokeball"
-                height="40px"
-                width="auto"
-              />
-            </button>
-          </form>
-        </div>
+
+        <!-- Barra de búsqueda eliminada según tu solicitud -->
 
         <div class="pokedex__header-aline">
           <div class="arrow-left" id="arrow-left"></div>
@@ -117,11 +106,14 @@
         </div>
       </div>
 
-      <div
-        class="pokedex__pokemon-content"
-        id="pokemonContent"
-        onclick="exitModal()"
-      ></div>
+      <div class="pokedex__pokemon-content" id="pokemonContent"></div>
+    </div>
+
+    <!-- Modal para mostrar los detalles de un Pokémon -->
+    <div id="pokemon-modal" class="pokemon-modal" style="display: none">
+      <div id="modalContent" class="modal-content">
+        <!-- Aquí se inyectará el contenido del modal con los detalles del Pokémon -->
+      </div>
     </div>
 
     <footer class="bg-dark text-white">
@@ -164,5 +156,6 @@
       </div>
     </footer>
     <script src="pokedex.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   </body>
 </html>

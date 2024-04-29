@@ -1,58 +1,72 @@
 {
   "Pueblo Paleta": {
     "nombre": "Pueblo Paleta",
+    "imagen": "resources/pueblo_paleta.png",
     "descripción": "Es el lugar donde inician los entrenadores su aventura. Hogar del Profesor Oak."
   },
   "Ciudad Verde": {
     "nombre": "Ciudad Verde",
+    "imagen": "resources/ciudad_verde.png",
     "descripción": "Una ciudad acogedora y tranquila. Es conocida por su gimnasio liderado por Brock."
   },
   "Ciudad Plateada": {
     "nombre": "Ciudad Plateada",
+    "imagen": "resources/ciudad_plateada.png",
     "descripción": "Es famosa por la cueva Diglett y su gimnasio de tipo roca."
   },
   "Liga Pokémon": {
     "nombre": "Liga Pokémon",
-    "descripción": "El último desafío de un entrenador, donde se enfrentan a los cuatro mejores entrenadores y al Campeón."
+    "descripción": "El último desafío de un entrenador, donde se enfrentan a los cuatro mejores entrenadores y al Campeón.",
+    "imagen": "resources/liga_pokemon.png"
   },
   "Isla Canela": {
     "nombre": "Isla Canela",
-    "descripción": "Una isla tropical cuyo gimnasio se especializa en el tipo fuego."
+    "descripción": "Una isla tropical cuyo gimnasio se especializa en el tipo fuego.",
+    "imagen": "resources/isla_canela.png"
   },
   "Ciudad Azulona": {
     "nombre": "Ciudad Azulona",
-    "descripción": "Una gran ciudad con una variedad de tiendas y el gimnasio liderado por Erika."
+    "descripción": "Una gran ciudad con una variedad de tiendas y el gimnasio liderado por Erika.",
+    "imagen": "resources/ciudad_azulona.png"
   },
   "Ciudad Celeste": {
     "nombre": "Ciudad Celeste",
-    "descripción": "Conocida por su famoso puente y el gimnasio de tipo agua."
+    "descripción": "Conocida por su famoso puente y el gimnasio de tipo agua.",
+    "imagen": "resources/ciudad_celeste.png"
   },
   "Ciudad Azafrán": {
     "nombre": "Ciudad Azafrán",
-    "descripción": "El hogar de Sylph S.A. y el gimnasio psíquico."
+    "descripción": "El hogar de Sylph S.A. y el gimnasio psíquico.",
+    "imagen": "resources/ciudad_azafran.png"
   },
   "Ciudad Fucsia": {
     "nombre": "Ciudad Fucsia",
-    "descripción": "Esta ciudad alberga un Zoológico de Safari y un gimnasio de tipo veneno."
+    "descripción": "Esta ciudad alberga un Zoológico de Safari y un gimnasio de tipo veneno.",
+    "imagen": "resources/ciudad_fucsia.png"
   },
   "Pueblo Lavanda": {
     "nombre": "Pueblo Lavanda",
-    "descripción": "Un pueblo conocido por la Torre Pokémon, un cementerio de Pokémon."
+    "descripción": "Un pueblo conocido por la Torre Pokémon, un cementerio de Pokémon.",
+    "imagen": "resources/pueblo_lavanda.png"
   },
   "Ciudad Carmín": {
     "nombre": "Ciudad Carmín",
-    "descripción": "Una ciudad portuaria donde los entrenadores pueden abordar el S.S. Anne."
+    "descripción": "Una ciudad portuaria donde los entrenadores pueden abordar el S.S. Anne.",
+    "imagen": "resources/ciudad_carmin.png"
   },
   "Ruta 1": {
     "nombre": "Ruta 1",
-    "descripción": "La primera ruta que los entrenadores viajan después de dejar Pueblo Paleta."
+    "descripción": "La primera ruta que los entrenadores viajan después de dejar Pueblo Paleta.",
+    "imagen": "resources/ruta_1.png"
   },
   "Calle Victoria": {
     "nombre": "Calle Victoria",
-    "descripción": "El camino que lleva a la Liga Pokémon. Un desafío para cualquier entrenador."
+    "descripción": "El camino que lleva a la Liga Pokémon. Un desafío para cualquier entrenador.",
+    "imagen": "resources/calle_victoria.png"
   },
   "Paseo Marítimo": {
     "nombre": "Paseo Marítimo",
-    "descripción": "Una bella zona costera que conecta varias ciudades importantes."
+    "descripción": "Una bella zona costera que conecta varias ciudades importantes.",
+    "imagen": "resources/paseo_maritimo.png"
   }
 }

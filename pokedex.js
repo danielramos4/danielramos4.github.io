@@ -1,7 +1,4 @@
 const pokeContent = document.getElementById("pokemonContent");
-let pokeForm = document.getElementById("searchPokemon");
-let generationshow = 1;
-const modalSearch = document.getElementById("pokemonContent");
 const divGeneration = document.getElementById("textGen");
 /*ordenar xr generacion*/
 /*Primera Gen 1-151*/
@@ -20,6 +17,7 @@ function showPokemonGen(gen) {
   return generacion;
 }
 
+let generationshow = 1;
 let pokemonGeneration = showPokemonGen(generationshow);
 
 /*cambiar de generacion*/
@@ -28,7 +26,7 @@ let arrowRight = document
   .getElementById("arrow-right")
   .addEventListener("click", (e) => {
     if (generationshow < 4) {
-      modalSearch.innerHTML = "";
+      pokeContent.innerHTML = "";
       generationshow += 1;
       pokemonGeneration = showPokemonGen(generationshow);
       divGeneration.innerHTML = "Gen " + generationshow;
@@ -36,16 +34,15 @@ let arrowRight = document
     }
   });
 
-let arrowleft = document
+let arrowLeft = document
   .getElementById("arrow-left")
   .addEventListener("click", (e) => {
-    if (generationshow > 0) {
-      modalSearch.innerHTML = "";
+    if (generationshow > 1) {
+      pokeContent.innerHTML = "";
       generationshow -= 1;
       pokemonGeneration = showPokemonGen(generationshow);
       divGeneration.innerHTML = "Gen " + generationshow;
       drawPokemon();
-      console.log(generationshow);
     }
   });
 
@@ -55,17 +52,35 @@ const drawPokemon = async () => {
   }
 };
 
-const getPokemon = async (id, modal) => {
+// Actualiza tu función getPokemon para manejar el clic en cada tarjeta Pokémon
+async function getPokemon(id) {
   try {
     const url = `https://pokeapi.co/api/v2/pokemon/${id}`;
     const res = await fetch(url);
     const pokemon = await res.json();
-    createPokemon(pokemon, modal);
+
+    // Fetch adicional para obtener información de la especie, incluida la descripción
+    const speciesUrl = pokemon.species.url; // URL de la especie del Pokémon
+    const speciesResponse = await fetch(speciesUrl);
+    const speciesData = await speciesResponse.json();
+
+    // Encuentra la descripción en inglés
+    const englishFlavorText = speciesData.flavor_text_entries.find(
+      (flavor) => flavor.language.name === "es"
+    );
+
+    const pokemonCard = createPokemon(pokemon);
+    pokemonCard.onclick = () =>
+      mostrarDetallesPokemon(
+        pokemon,
+        englishFlavorText
+          ? englishFlavorText.flavor_text
+          : "No description available."
+      );
   } catch (error) {
-    console.error(error);
-    // Maneja el error, por ejemplo, mostrando un mensaje al usuario
+    console.error("Error fetching Pokémon:", error);
   }
-};
+}
 
 function createPokemon(pokemon, modal) {
   const pokemonEl = document.createElement("div");
@@ -79,7 +94,7 @@ function createPokemon(pokemon, modal) {
   pokemonEl.style.backgroundColor = color;
 
   // Utilizar la imagen oficial proporcionada por PokeAPI
-  const imageUrl = pokemon.sprites.other["showdown"].front_default;
+  const imageUrl = pokemon.sprites.front_default;
 
   const pokeInnerHTML = `
         <div class="img-container">
@@ -101,6 +116,8 @@ function createPokemon(pokemon, modal) {
   } else {
     modalSearch.innerHTML = pokeInnerHTML;
   }
+
+  return pokemonEl;
 }
 
 /*pintar card pokemon*/
@@ -127,6 +144,66 @@ const colors = {
 
 const main_types = Object.keys(colors);
 
+// Función para cerrar el modal
+function cerrarModal() {
+  const modal = document.getElementById("pokemon-modal");
+  modal.style.display = "none";
+}
+
+// Función para crear y mostrar el modal con más información del Pokémon
+function mostrarDetallesPokemon(pokemon, description) {
+  const modal = document.getElementById("pokemon-modal");
+  const modalContent = document.createElement("div");
+  modalContent.classList.add("pokemon-detalles");
+
+  // Base size for Pokémon image is 100px for 1 meter (10 decimeters)
+  const baseHeight = 150; // 100 pixels
+  const imageHeight =
+    pokemon.height < 30 ? baseHeight : (pokemon.height / 20) * baseHeight; // Scale based on Pokémon height if it's greater than or equal to 1 meter
+
+  // Agrega aquí más detalles que quieras mostrar en tu modal
+  modalContent.innerHTML = `
+    <h2>${pokemon.name[0].toUpperCase() + pokemon.name.slice(1)}</h2>
+    <img src="${pokemon.sprites.other["showdown"].front_default}" alt="${
+    pokemon.name
+  }" style="height: ${imageHeight}px;" />
+    <p>Tipo: ${pokemon.types.map((type) => type.type.name).join(", ")}</p>
+    <p>Altura: ${pokemon.height / 10} metros</p>
+    <p>Peso: ${pokemon.weight / 10} KG</p>
+    <p>Descripción: ${description}</p>
+    <a type="button" class="btn btn-outline-light" href="https://www.pokemon.com/es/pokedex/${
+      pokemon.name
+    }" target="_blank" rel="noopener noreferrer">Más información</a>
+    
+    <button type="button" class="btn btn-outline-danger" onclick="cerrarModal()">Cerrar</button>
+    `;
+
+  // Limpia el contenido anterior y agrega el nuevo
+  modal.innerHTML = "";
+  modal.appendChild(modalContent);
+
+  // Muestra el modal
+  modal.style.display = "block";
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const modal = document.getElementById("pokemon-modal");
+  const modalContent = document.getElementById("modalContent");
+
+  modal.addEventListener("click", function (event) {
+    // Verifica si el clic fue fuera del contenido del modal
+    if (event.target === modal) {
+      modal.style.display = "none";
+    }
+  });
+
+  // Función para cerrar el modal que puede ser llamada por un botón de cierre
+  window.cerrarModal = function () {
+    modal.style.display = "none";
+  };
+});
+
+// Asegúrate de llamar a la función drawPokemon al cargar la página o cuando sea necesario
 drawPokemon();
 
 /*Buscar pokemon*/

@@ -311,9 +311,20 @@ footer {
 }
 
 .hero-section {
-  background: linear-gradient(rgba(2, 35, 77, 0), rgb(2, 35, 77)),
-    url("resources/hero-bg.png") no-repeat center center,
-    linear-gradient(rgba(2, 35, 77, 1), rgb(2, 35, 77, 0));
+  background: linear-gradient(
+      to bottom,
+      rgba(2, 35, 77, 1) 0%,
+      rgba(2, 35, 77, 0.8) 10%,
+      rgba(2, 35, 77, 0.6) 20%,
+      rgba(2, 35, 77, 0.4) 40%,
+      rgba(2, 35, 77, 0.2) 60%,
+      rgba(2, 35, 77, 0.2) 80%,
+      rgba(2, 35, 77, 0.4) 85%,
+      rgba(2, 35, 77, 0.6) 90%,
+      rgba(2, 35, 77, 0.8) 95%,
+      rgba(2, 35, 77, 1) 100%
+    ),
+    url("resources/hero-bg.png") no-repeat center;
   background-size: cover;
   position: relative;
   overflow: hidden;
@@ -323,12 +334,11 @@ footer {
   position: relative;
   padding: 100px 50px;
   background-color: rgba(
-    0,
-    0,
-    0,
+    2,
+    35,
+    77,
     0.5
   ); /* Un fondo oscuro para contrastar con el texto */
-  border-radius: 15px;
 }
 
 .hero-title {
@@ -398,6 +408,19 @@ h5 {
   font-weight: bolder;
 }
 
+.news-section {
+  background: linear-gradient(
+      to bottom,
+      rgba(2, 35, 77, 1) 0%,
+      rgba(2, 35, 77, 0) 10%,
+      /* Empieza el degradado más cerca del inicio */ rgba(2, 35, 77, 0) 90%,
+      /* Termina el degradado más cerca del final */ rgba(2, 35, 77, 1) 100%
+    ),
+    url("resources/wallpaper_news.gif") no-repeat center center; /* Asegúrate de colocar la ruta correcta a tu imagen */
+  background-size: cover; /* Esto hará que tu imagen de fondo cubra todo el espacio disponible */
+  padding: 5rem 0;
+}
+
 /* Estilo de la pokédex */
 .pokedex__header {
   background: rgba(2, 35, 77, 1);
@@ -412,9 +435,9 @@ h5 {
 }
 
 .pokedex__header-title {
-  color: rgb(127, 138, 163);
-  margin: 0 25px 0 10px;
-  text-align: left;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  text: 20px;
 }
 
 .pokedex__header-search {
@@ -553,11 +576,81 @@ h5 {
   margin: auto;
   width: 100%;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.753);
+  background: rgba(182, 182, 182, 0.753);
   display: flex;
   align-items: center;
   justify-content: center;
   cursor: pointer;
+}
+
+.pokemon-modal {
+  display: none; /* Oculto por defecto */
+  position: fixed; /* Fijo en la pantalla */
+  z-index: 1; /* Encima de todo */
+  left: 0;
+  top: 0;
+  width: 100%; /* Ancho total */
+  height: 100%; /* Alto total */
+  overflow: auto; /* Si el contenido es más grande que la pantalla, permite scroll */
+  background-color: rgb(0, 0, 0); /* Fondo negro */
+  background-color: rgba(0, 0, 0, 0.4); /* Negro con opacidad */
+}
+.pokemon-modal .pokemon-detalles {
+  background: rgb(2, 35, 77);
+  margin: 10% auto; /* Centrado verticalmente y horizontalmente */
+  padding: 20px;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+  border-radius: 15px;
+  width: 50%; /* Ancho del contenido del modal */
+  text-align: center;
+}
+.close-modal {
+  color: #aaa;
+  float: right; /* A la derecha */
+  font-size: 28px;
+  font-weight: bold;
+}
+.close-modal:hover,
+.close-modal:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 5px 10px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: #f44336; /* o cualquier color que prefieras */
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.pokemon-modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000; /* Asegúrate de que está sobre otros contenidos */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  width: 80%; /* o cualquier ancho que prefieras */
+  max-width: 600px;
 }
 
 .items-container {
@@ -603,14 +696,13 @@ h5 {
   text-align: center;
 }
 
-
 #map-container {
   position: relative;
   text-align: center;
 }
 
 #info-card {
-  background: white; /* Fondo blanco para la tarjeta */
+  background: rgb(255, 253, 219); /* Fondo blanco para la tarjeta */
   color: black; /* Color de texto negro */
   border: 1px solid #000;
   border-radius: 10px;
@@ -629,6 +721,7 @@ h5 {
   display: none;
   z-index: 1050; /* Asegurarse de que está sobre el overlay */
   font-size: 1.2rem; /* Tamaño de texto aumentado */
+  text-align: center;
 }
 
 #info-card h2 {
@@ -637,17 +730,11 @@ h5 {
   font-size: 2rem; /* Tamaño de título aumentado */
 }
 
-
 #info-card.show {
   display: block; /* Asegura que el bloque está visible */
   opacity: 1; /* Completa opacidad */
   visibility: visible; /* Hace el elemento visible */
 }
-
-
-
-
-
 
 /* Sobreescribe la animación para la imagen dentro del #map-container */
 #map-container img {
