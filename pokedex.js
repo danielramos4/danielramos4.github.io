@@ -82,41 +82,32 @@ async function getPokemon(id) {
   }
 }
 
-function createPokemon(pokemon, modal) {
+function createPokemon(pokemon) {
   const pokemonEl = document.createElement("div");
   pokemonEl.classList.add("pokemon");
+  pokemon.types.forEach((type) => {
+    pokemonEl.classList.add(type.type.name.toLowerCase()); // Asegúrate de que las clases están en minúsculas
+  });
 
-  const poke_types = pokemon.types.map((type) => type.type.name);
-  const type = main_types.find((type) => poke_types.indexOf(type) > -1);
-  const name = pokemon.name[0].toUpperCase() + pokemon.name.slice(1);
-  const color = colors[type];
+  const imageUrl = pokemon.sprites.front_default;
+  const name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
+  const color = colors[pokemon.types[0].type.name.toLowerCase()]; // Asegúrate de que el acceso a los colores también esté en minúsculas
 
   pokemonEl.style.backgroundColor = color;
+  pokemonEl.innerHTML = `
+      <div class="img-container">
+          <img src="${imageUrl}" alt="${name}" />
+      </div>
+      <div class="info">
+          <span class="number">#${pokemon.id.toString().padStart(3, "0")}</span>
+          <h3 class="name">${name}</h3>
+          <small class="type">Tipo: ${pokemon.types
+            .map((type) => type.type.name)
+            .join(", ")}</small>
+      </div>
+  `;
 
-  // Utilizar la imagen oficial proporcionada por PokeAPI
-  const imageUrl = pokemon.sprites.front_default;
-
-  const pokeInnerHTML = `
-        <div class="img-container">
-            <img src="${imageUrl}" alt="${name}" />
-        </div>
-        <div class="info">
-            <span class="number">#${pokemon.id
-              .toString()
-              .padStart(3, "0")}</span>
-            <h3 class="name">${name}</h3>
-            <small class="type">Tipo: <span>${type}</span></small>
-        </div>
-    `;
-
-  pokemonEl.innerHTML = pokeInnerHTML;
-
-  if (!modal) {
-    pokeContent.appendChild(pokemonEl);
-  } else {
-    modalSearch.innerHTML = pokeInnerHTML;
-  }
-
+  pokeContent.appendChild(pokemonEl);
   return pokemonEl;
 }
 
@@ -208,14 +199,23 @@ drawPokemon();
 
 /*Buscar pokemon*/
 
-pokeForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  let searchPokemon = document.getElementById("pokemon").value;
-  getPokemon(searchPokemon, true);
-});
-
 function exitModal() {
   const modalPokemon = document.getElementById("modalPokemon");
   modalPokemon.style.display = "none";
   drawPokemon();
+}
+
+document.getElementById("typeSelect").addEventListener("change", function () {
+  filterPokemonByType(this.value); // Pasar el valor seleccionado a la función de filtrado
+});
+
+function filterPokemonByType(selectedType) {
+  const pokemons = document.querySelectorAll(".pokemon");
+  console.log(`Filtrando por tipo: ${selectedType}`); // Para depuración
+
+  pokemons.forEach((pokemon) => {
+    const matchesType =
+      selectedType === "all" || pokemon.classList.contains(selectedType);
+    pokemon.style.display = matchesType ? "block" : "none";
+  });
 }

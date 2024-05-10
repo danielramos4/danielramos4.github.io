@@ -116,7 +116,7 @@ main {
 
 .container {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: start;
   gap: 60px;
   margin: 0 auto;
@@ -639,6 +639,8 @@ h5 {
   background-color: rgba(0, 0, 0, 0.5);
   display: flex;
   justify-content: center;
+  animation-name: animatetop;
+  animation-duration: 1s;
   align-items: center;
   z-index: 1000; /* Asegúrate de que está sobre otros contenidos */
 }
@@ -657,12 +659,14 @@ h5 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  text-align: center;
+  justify-content: center;
   padding: 20px;
 }
 
 .items__header {
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
 }
@@ -682,14 +686,30 @@ h5 {
   width: 200px; /* Ancho más grande */
   height: auto; /* Altura más baja */
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
 }
 
-.item-image img {
-  min-width: 100%;
-  height: auto;
+.item-card:hover {
+  transform: scale(1.2) rotate(5deg);
+  transition: transform 0.3s ease-in-out;
+  box-shadow: 0 0 100px rgba(0, 0, 0, 0.5);
+}
+
+.item-card .item-image {
+  width: 150px; /* Aumentar según sea necesario */
+  height: 150px; /* Aumentar según sea necesario */
+  background-color: rgba(255, 255, 255, 0.6);
+  border-radius: 50%;
+  text-align: center;
+  margin: auto;
+}
+
+.item-card .item-image img {
+  width: 70px; /* Asegura que la imagen no sobrepase el contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
+  margin-top: 30%; /* Ajustar según sea necesario para centrar la imagen verticalmente */
 }
 
 .item-info {
@@ -744,4 +764,164 @@ h5 {
   transition: none;
   border-radius: 100px;
   box-shadow: #000;
+}
+
+.item-modal {
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.item-modal-content {
+  background-color: #0a2246;
+  margin: 15% auto;
+  border: 1px solid #5a5757;
+  padding-bottom: 20px;
+
+  padding-left: 20px;
+  padding-right: 20px;
+  width: 30%;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  animation-name: animatetop;
+  animation-duration: 1s;
+  border-radius: 15px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+}
+
+.item-modal-content img {
+  width: 70px;
+  height: auto;
+  padding-bottom: 20px;
+}
+
+.close {
+  color: #a70303;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: white;
+  scale: 1.2;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@keyframes animatetop {
+  from {
+    top: -300px;
+    opacity: 0;
+  }
+  to {
+    top: 0;
+    opacity: 1;
+  }
+}
+
+.item-card h3,
+.item-card p {
+  text-shadow: 3px 3px 4px rgba(42, 32, 136, 0.6); /* Sombra negra */
+  color: #000000; /* Texto blanco para generalizar la visibilidad en colores de fondo variados */
+}
+
+.category-filter {
+  margin: 20px;
+  text-align: center;
+}
+
+#categorySelect {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: #e2c000; /* Un gris oscuro que debería ser visible sobre un fondo claro */
+}
+
+.navbar-light .navbar-brand {
+  color: #e2c000; /* Asegúrate de que el logo o texto del brand también sea visible */
+}
+
+.navbar-light .navbar-toggler {
+  border-color: #e2c000; /* Cambia el color del borde si es necesario */
+  color: #e2c000;
+}
+
+.navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='%23FFFF00' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link:focus {
+  color: #000000; /* Un color ligeramente más oscuro para hover y focus */
+}
+
+.nav-link.active img {
+  border: 2px solid #e2c000; /* Añade un borde azul */
+  border-radius: 15px; /* Bordes redondeados */
+  box-shadow: 0 0 8px #b39800; /* Añade una sombra azul para más visibilidad */
+}
+
+.filter-container {
+  margin: 20px;
+  text-align: center;
+}
+
+#typeSelect {
+  padding: 10px;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.card-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Alinea los contenidos internos espaciadamente */
+  height: 100%; /* Asegura que el cuerpo de la tarjeta ocupe todo el espacio disponible en la tarjeta */
+}
+
+.card-img-top {
+  width: 100%; /* Asegura que la imagen cubra el ancho completo del contenedor */
+  height: 200px; /* Altura fija para todas las imágenes */
+  object-fit: cover; /* Mantiene las proporciones de la imagen, recortando el exceso */
+}
+.card-img-top:hover {
+  transform: scale(1);
+}
+
+.btn-primary {
+  width: 40%; /* Reduce el ancho del botón */
+  padding: 8px 12px; /* Ajusta el padding para hacer el botón más compacto */
+  margin-top: auto; /* Mantiene el botón alineado al fondo */
+  margin-left: auto; /* Centra el botón horizontalmente */
+  margin-right: auto;
+}
+
+.news-card {
+  display: flex; /* Habilita flexbox */
+  flex-direction: column; /* Orienta los elementos de la tarjeta en una columna */
+  height: 100%; /* Asegura que la tarjeta ocupe todo el espacio vertical disponible */
+}
+
+.news-card:hover {
+  transform: scale(1.4);
+  transition: transform 0.2s ease-in-out;
+  z-index: 100;
+}
+
+.card-body {
+  flex: 1; /* Hace que el cuerpo de la tarjeta crezca para ocupar todo el espacio que no usan los otros elementos */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Espacia los elementos internos justificadamente */
 }

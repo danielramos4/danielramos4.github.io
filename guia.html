@@ -64,29 +64,11 @@
                   height="50"
                   width="auto"
               /></a>
-              <a
-                class="nav-link active"
-                aria-current="page"
-                href="proyecto.html"
-                ><img
-                  src="resources/proyecto_header.png"
-                  alt="Proyecto"
-                  height="50"
-                  width="auto"
-              /></a>
-              <a class="nav-link" href="equipo.html"
-                ><img
-                  src="resources/equipo_header.png"
-                  alt="Equipo"
-                  height="50"
-                  width="auto"
-              /></a>
             </div>
           </div>
         </div>
       </nav>
     </header>
-
     <div id="vue-app" style="text-align: center; padding: 1%">
       <guia-component></guia-component>
     </div>
@@ -151,6 +133,7 @@
               descripcion:
                 "Brock es un líder de gimnasio serio que usa Pokémon de tipo roca.",
             },
+            imagen: "resources/ciudad_plateada.png",
           },
           {
             nombre: "Ciudad Celeste (Cerulean City)",
@@ -162,6 +145,7 @@
               descripcion:
                 "Misty es una experta en Pokémon de tipo agua y una nadadora excepcional.",
             },
+            imagen: "resources/ciudad_celeste.png",
           },
           {
             nombre: "Ciudad Carmín (Vermilion City)",
@@ -174,6 +158,7 @@
               descripcion:
                 "El Teniente Surge es un ex-combatiente con un enérgico equipo de Pokémon eléctricos.",
             },
+            imagen: "resources/ciudad_carmin.png",
           },
           {
             nombre: "Ciudad Azulona (Celadon City)",
@@ -186,6 +171,7 @@
               descripcion:
                 "Erika es tranquila y ama la naturaleza; utiliza Pokémon de tipo planta.",
             },
+            imagen: "resources/ciudad_azulona.png",
           },
           {
             nombre: "Ciudad Fucsia (Fuchsia City)",
@@ -197,6 +183,7 @@
               medalla: "Medalla Alma",
               descripcion: "Koga es un ninja que usa Pokémon de tipo veneno.",
             },
+            imagen: "resources/ciudad_fucsia.png",
           },
           {
             nombre: "Ciudad Azafrán (Saffron City)",
@@ -209,9 +196,10 @@
               descripcion:
                 "Sabrina es una poderosa psíquica que utiliza Pokémon de tipo psíquico.",
             },
+            imagen: "resources/ciudad_azafran.png",
           },
           {
-            nombre: "Ciudad Canela (Cinnabar Island)",
+            nombre: "Isla Canela (Cinnabar Island)",
             descripcion:
               "Una isla que alberga un volcán activo y el laboratorio Pokémon.",
             gimnasio: {
@@ -221,6 +209,7 @@
               descripcion:
                 "Blaine es un científico que adora los acertijos y los Pokémon de tipo fuego.",
             },
+            imagen: "resources/isla_canela.png",
           },
           {
             nombre: "Ciudad Verde (Viridian City)",
@@ -233,6 +222,7 @@
               descripcion:
                 "Giovanni, el líder del Team Rocket, usa Pokémon de tipo tierra.",
             },
+            imagen: "resources/ciudad_verde.png",
           },
         ],
         rutas: [
@@ -352,6 +342,7 @@
         template: `
     <div>
       <h1>Guía Pokémon</h1>
+      <p> Conoce todos los secretos de la primera generación! Pulsa en la sección que te interese para desplegar toda la información.</p>
       <a v-on:click="mostrarSeccion('ciudades')">
         <img src="resources/ciudades_guia.png" alt="Ciudades">
       </a>
@@ -362,6 +353,7 @@
         <ul>
           <a v-for="ciudad in data.ciudades" :key="ciudad.nombre">
             <h2>{{ ciudad.nombre }}</h2>
+            <img :src="ciudad.imagen" alt="Descripción alternativa de la imagen" style="width: 50%, height: auto">
             <p>{{ ciudad.descripcion }}</p>
             <h3>Gimnasio de {{ ciudad.gimnasio.lider }}</h3>
             <p>{{ ciudad.gimnasio.descripcion }}</p>
@@ -377,8 +369,7 @@
               <a v-for="pokemon in ruta.pokemon" :key="pokemon.nombre" @click="obtenerPokemon(pokemon.url)">
                 {{ pokemon.nombre }} ({{ pokemon.tipo.join(', ') }})
                 <p>{{ pokemon.descripcion }}</p>
-                <!-- Elemento de imagen donde se muestra el sprite -->
-                <img :src="pokemonImagen" alt="Sprite de Pokémon">
+                
               </a>
             </ul>
           </a>
@@ -416,5 +407,6 @@
         el: "#vue-app",
       });
     </script>
+    <script src="app.js"></script>
   </body>
 </html>
