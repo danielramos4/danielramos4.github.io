@@ -36,44 +36,70 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
             <div class="navbar-nav ms-auto">
-              <a class="nav-link" href="pokedex.html"
-                ><img
+              <a class="nav-link" href="pokedex.html">
+                <img
                   src="resources/pokedex_header.png"
                   alt="Pokedex"
                   height="50"
                   width="auto"
-              /></a>
-              <a class="nav-link" href="objetos.html"
-                ><img
+                />
+              </a>
+              <a class="nav-link" href="objetos.html">
+                <img
                   src="resources/objetos_header.png"
                   alt="Objetos"
                   height="50"
                   width="auto"
-              /></a>
-              <a class="nav-link" href="mapa.html"
-                ><img
+                />
+              </a>
+              <a class="nav-link" href="mapa.html">
+                <img
                   src="resources/mapa_header.png"
                   alt="Mapa"
                   height="50"
                   width="auto"
-              /></a>
-              <a class="nav-link" href="guia.html"
-                ><img
-                  src="resources/guia_header.png"
-                  alt="Guia"
-                  height="50"
-                  width="auto"
-              /></a>
+                />
+              </a>
+              <div class="nav-item dropdown">
+                <a
+                  class="nav-link dropdown-toggle"
+                  href="#"
+                  id="navbarDropdown"
+                  role="button"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                >
+                  <img
+                    src="resources/guia_header.png"
+                    alt="Guía"
+                    height="50"
+                    width="auto"
+                  />
+                </a>
+                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                  <li>
+                    <a class="dropdown-item" href="#" data-section="ciudades">
+                      Ciudades
+                    </a>
+                  </li>
+                  <li>
+                    <a class="dropdown-item" href="#" data-section="rutas">
+                      Rutas
+                    </a>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </nav>
     </header>
-    <div id="vue-app" style="text-align: center; padding: 1%">
+
+    <div id="vue-app" class="container my-4">
       <guia-component></guia-component>
     </div>
 
-    <footer class="bg-dark text-white">
+    <footer class="bg-dark text-white mt-5">
       <div class="container py-4">
         <div class="row">
           <div class="col-md-4">
@@ -331,58 +357,533 @@
               },
             ],
           },
-          // Puedes continuar añadiendo rutas según el diseño de tu juego o aplicación.
+          {
+            nombre: "Ruta 6",
+            descripcion:
+              "Esta ruta conecta Ciudad Carmín y Ciudad Azulona, rodeada de un entorno arbolado.",
+            pokemon: [
+              {
+                nombre: "Meowth",
+                tipo: ["Normal"],
+                descripcion:
+                  "Meowth es nocturno y suele pasear de noche para recoger objetos brillantes.",
+                url: "https://pokeapi.co/api/v2/pokemon/meowth",
+              },
+              {
+                nombre: "Abra",
+                tipo: ["Psíquico"],
+                descripcion:
+                  "Abra duerme dieciocho horas al día. Incluso dormido, puede usar Teleport para escapar del peligro.",
+                url: "https://pokeapi.co/api/v2/pokemon/abra",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 7",
+            descripcion:
+              "Conecta Ciudad Azulona con Ciudad Azafrán, ofreciendo un trayecto corto entre ambas.",
+            pokemon: [
+              {
+                nombre: "Oddish",
+                tipo: ["Planta", "Veneno"],
+                descripcion:
+                  "Oddish busca terreno fértil para plantarse durante la noche. Durante el día, Oddish se entierra en el suelo para absorber nutrientes usando todo el cuerpo.",
+                url: "https://pokeapi.co/api/v2/pokemon/oddish",
+              },
+              {
+                nombre: "Vulpix",
+                tipo: ["Fuego"],
+                descripcion:
+                  "Vulpix es conocido por su cola que se divide en seis partes desde su nacimiento.",
+                url: "https://pokeapi.co/api/v2/pokemon/vulpix",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 8",
+            descripcion:
+              "Ruta que une Ciudad Azulona y Ciudad Fucsia, poblada de Pokémon y entrenadores.",
+            pokemon: [
+              {
+                nombre: "Ponyta",
+                tipo: ["Fuego"],
+                descripcion:
+                  "Ponyta es conocido por sus llamas en la crin y su agilidad al correr.",
+                url: "https://pokeapi.co/api/v2/pokemon/ponyta",
+              },
+              {
+                nombre: "Growlithe",
+                tipo: ["Fuego"],
+                descripcion:
+                  "Growlithe es valiente y leal, conocido por su capacidad para oler el peligro.",
+                url: "https://pokeapi.co/api/v2/pokemon/growlithe",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 9",
+            descripcion:
+              "Una ruta montañosa que conecta Ciudad Celeste con la entrada del Túnel Roca.",
+            pokemon: [
+              {
+                nombre: "Machop",
+                tipo: ["Lucha"],
+                descripcion:
+                  "Machop entrena constantemente para fortalecer sus músculos y aumentar su poder de lucha.",
+                url: "https://pokeapi.co/api/v2/pokemon/machop",
+              },
+              {
+                nombre: "Onix",
+                tipo: ["Roca", "Tierra"],
+                descripcion:
+                  "Onix excava a través de la tierra a gran velocidad, usando su cuerpo de roca dura.",
+                url: "https://pokeapi.co/api/v2/pokemon/onix",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 10",
+            descripcion:
+              "Ruta que lleva a la Central de Energía y al acceso al Túnel Roca.",
+            pokemon: [
+              {
+                nombre: "Voltorb",
+                tipo: ["Eléctrico"],
+                descripcion:
+                  "Voltorb se asemeja a una Poké Ball y suele encontrarse cerca de instalaciones eléctricas.",
+                url: "https://pokeapi.co/api/v2/pokemon/voltorb",
+              },
+              {
+                nombre: "Magnemite",
+                tipo: ["Eléctrico", "Acero"],
+                descripcion:
+                  "Magnemite flota usando campos magnéticos y suele agruparse en áreas con alta electricidad.",
+                url: "https://pokeapi.co/api/v2/pokemon/magnemite",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 11",
+            descripcion:
+              "Ruta que conecta Ciudad Carmín con la entrada del túnel Diglett.",
+            pokemon: [
+              {
+                nombre: "Drowzee",
+                tipo: ["Psíquico"],
+                descripcion:
+                  "Drowzee tiene la capacidad de inducir el sueño y comer sueños de otros.",
+                url: "https://pokeapi.co/api/v2/pokemon/drowzee",
+              },
+              {
+                nombre: "Ekans",
+                tipo: ["Veneno"],
+                descripcion:
+                  "Ekans se enrosca para descansar. Adoptando esta postura, puede responder rápidamente a una amenaza desde cualquier dirección con un ataque de látigo.",
+                url: "https://pokeapi.co/api/v2/pokemon/ekans",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 12",
+            descripcion:
+              "Ruta que conecta Ciudad Lavanda con el Puerto S.S. Anne, conocida por sus pescadores.",
+            pokemon: [
+              {
+                nombre: "Krabby",
+                tipo: ["Agua"],
+                descripcion:
+                  "Krabby vive en la playa y pelea con sus pinzas para defender su territorio.",
+                url: "https://pokeapi.co/api/v2/pokemon/krabby",
+              },
+              {
+                nombre: "Horsea",
+                tipo: ["Agua"],
+                descripcion:
+                  "Horsea se oculta en arrecifes y dispara chorros de tinta para confundir a sus enemigos.",
+                url: "https://pokeapi.co/api/v2/pokemon/horsea",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 13",
+            descripcion:
+              "Una ruta costera con numerosos entrenadores y una vista al mar.",
+            pokemon: [
+              {
+                nombre: "Tentacool",
+                tipo: ["Agua", "Veneno"],
+                descripcion:
+                  "Tentacool flota en el agua y usa sus tentáculos para atrapar presas.",
+                url: "https://pokeapi.co/api/v2/pokemon/tentacool",
+              },
+              {
+                nombre: "Gloom",
+                tipo: ["Planta", "Veneno"],
+                descripcion:
+                  "Gloom emite un olor desagradable y usa su néctar para atrapar a sus presas.",
+                url: "https://pokeapi.co/api/v2/pokemon/gloom",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 14",
+            descripcion:
+              "Conecta las rutas 13 y 15, es conocida por su vegetación densa.",
+            pokemon: [
+              {
+                nombre: "Oddish",
+                tipo: ["Planta", "Veneno"],
+                descripcion:
+                  "Oddish busca terreno fértil para plantarse durante la noche. Durante el día, Oddish se entierra en el suelo para absorber nutrientes usando todo el cuerpo.",
+                url: "https://pokeapi.co/api/v2/pokemon/oddish",
+              },
+              {
+                nombre: "Venonat",
+                tipo: ["Bicho", "Veneno"],
+                descripcion:
+                  "Venonat tiene ojos grandes que pueden ver en la oscuridad y detecta el movimiento de sus presas.",
+                url: "https://pokeapi.co/api/v2/pokemon/venonat",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 15",
+            descripcion:
+              "Conecta Ciudad Fucsia con la Ruta 14, rica en biodiversidad.",
+            pokemon: [
+              {
+                nombre: "Bellsprout",
+                tipo: ["Planta", "Veneno"],
+                descripcion:
+                  "Bellsprout es un Pokémon que puede balancear su cuerpo para moverse más rápido y capturar presas con sus ramas delgadas.",
+                url: "https://pokeapi.co/api/v2/pokemon/bellsprout",
+              },
+              {
+                nombre: "Weepinbell",
+                tipo: ["Planta", "Veneno"],
+                descripcion:
+                  "Weepinbell usa su cuerpo para colgarse de las ramas y emboscar a sus presas.",
+                url: "https://pokeapi.co/api/v2/pokemon/weepinbell",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 16",
+            descripcion:
+              "Conecta Ciudad Azulona con la Ruta 17, es un corto camino de entrada.",
+            pokemon: [
+              {
+                nombre: "Snorlax",
+                tipo: ["Normal"],
+                descripcion:
+                  "Snorlax pasa la mayor parte del tiempo durmiendo y solo se despierta para comer grandes cantidades de comida.",
+                url: "https://pokeapi.co/api/v2/pokemon/snorlax",
+              },
+              {
+                nombre: "Doduo",
+                tipo: ["Normal", "Volador"],
+                descripcion:
+                  "Doduo tiene dos cabezas y puede correr a gran velocidad usando sus fuertes patas.",
+                url: "https://pokeapi.co/api/v2/pokemon/doduo",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 17",
+            descripcion:
+              "También conocida como Camino de Bicis, conecta la Ruta 16 con la Ruta 18.",
+            pokemon: [
+              {
+                nombre: "Raticate",
+                tipo: ["Normal"],
+                descripcion:
+                  "Raticate tiene colmillos largos y afilados que usa para roer todo tipo de materiales.",
+                url: "https://pokeapi.co/api/v2/pokemon/raticate",
+              },
+              {
+                nombre: "Fearow",
+                tipo: ["Normal", "Volador"],
+                descripcion:
+                  "Fearow tiene alas fuertes y puede volar a gran velocidad y altura.",
+                url: "https://pokeapi.co/api/v2/pokemon/fearow",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 18",
+            descripcion:
+              "Conecta Ciudad Fucsia con la Ruta 17, un camino corto pero transitado.",
+            pokemon: [
+              {
+                nombre: "Dodrio",
+                tipo: ["Normal", "Volador"],
+                descripcion:
+                  "Dodrio tiene tres cabezas y es capaz de correr largas distancias sin cansarse.",
+                url: "https://pokeapi.co/api/v2/pokemon/dodrio",
+              },
+              {
+                nombre: "Primeape",
+                tipo: ["Lucha"],
+                descripcion:
+                  "Primeape es conocido por su temperamento explosivo y su gran fuerza en combate.",
+                url: "https://pokeapi.co/api/v2/pokemon/primeape",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 19",
+            descripcion:
+              "Conecta Ciudad Fucsia con Isla Canela, pasando por el mar.",
+            pokemon: [
+              {
+                nombre: "Tentacool",
+                tipo: ["Agua", "Veneno"],
+                descripcion:
+                  "Tentacool flota en el agua y usa sus tentáculos para atrapar presas.",
+                url: "https://pokeapi.co/api/v2/pokemon/tentacool",
+              },
+              {
+                nombre: "Staryu",
+                tipo: ["Agua"],
+                descripcion:
+                  "Staryu puede regenerar sus extremidades perdidas y emite luz para comunicarse.",
+                url: "https://pokeapi.co/api/v2/pokemon/staryu",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 20",
+            descripcion:
+              "Una ruta marítima que conecta las Islas Espuma con Ciudad Fucsia y la Ruta 21.",
+            pokemon: [
+              {
+                nombre: "Shellder",
+                tipo: ["Agua"],
+                descripcion:
+                  "Shellder usa su concha dura para protegerse de los depredadores y se aferra a las rocas con fuerza.",
+                url: "https://pokeapi.co/api/v2/pokemon/shellder",
+              },
+              {
+                nombre: "Horsea",
+                tipo: ["Agua"],
+                descripcion:
+                  "Horsea se oculta en arrecifes y dispara chorros de tinta para confundir a sus enemigos.",
+                url: "https://pokeapi.co/api/v2/pokemon/horsea",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 21",
+            descripcion:
+              "Conecta Isla Canela con Ciudad Verde a través de un camino marítimo.",
+            pokemon: [
+              {
+                nombre: "Tangela",
+                tipo: ["Planta"],
+                descripcion:
+                  "Tangela tiene un cuerpo cubierto de lianas que se mueven constantemente.",
+                url: "https://pokeapi.co/api/v2/pokemon/tangela",
+              },
+              {
+                nombre: "Tentacruel",
+                tipo: ["Agua", "Veneno"],
+                descripcion:
+                  "Tentacruel tiene tentáculos largos y venenosos que usa para atrapar y paralizar a sus presas.",
+                url: "https://pokeapi.co/api/v2/pokemon/tentacruel",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 22",
+            descripcion:
+              "Conecta Ciudad Verde con la Meseta Añil, conocida por sus entrenadores de alto nivel.",
+            pokemon: [
+              {
+                nombre: "Spearow",
+                tipo: ["Normal", "Volador"],
+                descripcion:
+                  "Spearow grazna con tanta fuerza que puede ser oído a más de 1 km de distancia. Si su enemigo se acerca, ataca con furiosos embates.",
+                url: "https://pokeapi.co/api/v2/pokemon/spearow",
+              },
+              {
+                nombre: "Mankey",
+                tipo: ["Lucha"],
+                descripcion:
+                  "Mankey es muy agresivo y ataca sin previo aviso. Es muy territorial.",
+                url: "https://pokeapi.co/api/v2/pokemon/mankey",
+              },
+            ],
+          },
+          {
+            nombre: "Ruta 23",
+            descripcion:
+              "Conecta la Ruta 22 con la Calle Victoria, el último desafío antes de la Liga Pokémon.",
+            pokemon: [
+              {
+                nombre: "Golbat",
+                tipo: ["Veneno", "Volador"],
+                descripcion:
+                  "Golbat chupa la sangre de sus presas y puede volar a grandes velocidades.",
+                url: "https://pokeapi.co/api/v2/pokemon/golbat",
+              },
+              {
+                nombre: "Machoke",
+                tipo: ["Lucha"],
+                descripcion:
+                  "Machoke es extremadamente fuerte y puede levantar objetos pesados con facilidad.",
+                url: "https://pokeapi.co/api/v2/pokemon/machoke",
+              },
+            ],
+          },
+          {
+            nombre: "Islas Espuma",
+            descripcion:
+              "Un grupo de islas heladas situadas en el mar, hogar de Articuno.",
+            pokemon: [
+              {
+                nombre: "Seel",
+                tipo: ["Agua"],
+                descripcion:
+                  "Seel vive en las frías aguas del océano y se desliza por el hielo con facilidad.",
+                url: "https://pokeapi.co/api/v2/pokemon/seel",
+              },
+              {
+                nombre: "Dewgong",
+                tipo: ["Agua", "Hielo"],
+                descripcion:
+                  "Dewgong es ágil en el agua y usa su gruesa capa de grasa para mantenerse caliente.",
+                url: "https://pokeapi.co/api/v2/pokemon/dewgong",
+              },
+            ],
+          },
+          {
+            nombre: "Calle Victoria",
+            descripcion:
+              "El último reto antes de la Liga Pokémon, lleno de entrenadores expertos y Pokémon fuertes.",
+            pokemon: [
+              {
+                nombre: "Machop",
+                tipo: ["Lucha"],
+                descripcion:
+                  "Machop entrena constantemente para fortalecer sus músculos y aumentar su poder de lucha.",
+                url: "https://pokeapi.co/api/v2/pokemon/machop",
+              },
+              {
+                nombre: "Zubat",
+                tipo: ["Veneno", "Volador"],
+                descripcion:
+                  "Zubat se desplaza por la oscuridad emitiendo ultrasonidos y usa sus grandes oídos para detectar obstáculos.",
+                url: "https://pokeapi.co/api/v2/pokemon/zubat",
+              },
+            ],
+          },
         ],
       };
     </script>
 
     <!-- Componente de Vue para la guía -->
+    <style>
+      .pokemon-card {
+        cursor: pointer;
+        transition: transform 0.3s;
+      }
+
+      .pokemon-card:hover {
+        transform: scale(1.05);
+      }
+
+      .pokemon-card img {
+        height: 100px;
+        object-fit: contain;
+      }
+
+      .modal-img {
+        height: 200px;
+        object-fit: contain;
+      }
+
+      .row {
+        justify-content: center;
+      }
+
+      .card {
+        background-color: bisque;
+      }
+    </style>
+
+    <!-- Componente de Vue para la guía -->
     <script>
       Vue.component("guia-component", {
         template: `
-    <div>
-      <h1>Guía Pokémon</h1>
-      <p> Conoce todos los secretos de la primera generación! Pulsa en la sección que te interese para desplegar toda la información.</p>
-      <a v-on:click="mostrarSeccion('ciudades')">
-        <img src="resources/ciudades_guia.png" alt="Ciudades">
-      </a>
-      <a v-on:click="mostrarSeccion('rutas')">
-        <img src="resources/rutas_guia.png" alt="Rutas">
-      </a>
-      <div v-if="seccionActiva === 'ciudades'">
-        <ul>
-          <a v-for="ciudad in data.ciudades" :key="ciudad.nombre">
-            <h2>{{ ciudad.nombre }}</h2>
-            <img :src="ciudad.imagen" alt="Descripción alternativa de la imagen" style="width: 50%, height: auto">
-            <p>{{ ciudad.descripcion }}</p>
-            <h3>Gimnasio de {{ ciudad.gimnasio.lider }}</h3>
-            <p>{{ ciudad.gimnasio.descripcion }}</p>
+      <div>
+        <h1>Guía Pokémon</h1>
+        <p> Conoce todos los secretos de la primera generación! Pulsa en la sección que te interese para desplegar toda la información.</p>
+        <div class="d-flex justify-content-center mb-4">
+          <a v-on:click="mostrarSeccion('ciudades')" :class="{'selected': seccionActiva === 'ciudades'}" class="mx-2 btn btn-primary">
+            Ciudades
           </a>
-        </ul>
-      </div>
-      <div v-if="seccionActiva === 'rutas'">
-        <ul>
-          <a v-for="ruta in data.rutas" :key="ruta.nombre">
-            <h2>{{ ruta.nombre }}</h2>
-            <p>{{ ruta.descripcion }}</p>
-            <ul>
-              <a v-for="pokemon in ruta.pokemon" :key="pokemon.nombre" @click="obtenerPokemon(pokemon.url)">
-                {{ pokemon.nombre }} ({{ pokemon.tipo.join(', ') }})
-                <p>{{ pokemon.descripcion }}</p>
-                
-              </a>
-            </ul>
+          <a v-on:click="mostrarSeccion('rutas')" :class="{'selected': seccionActiva === 'rutas'}" class="mx-2 btn btn-primary">
+            Rutas
           </a>
-        </ul>
-
+        </div>
+        <div v-if="seccionActiva === 'ciudades'" class="row">
+          <div v-for="ciudad in data.ciudades" :key="ciudad.nombre" class="col-md-6 mb-4">
+            <div class="card">
+              <img :src="ciudad.imagen" class="card-img-top" :alt="ciudad.nombre">
+              <div class="card-body">
+                <h5 class="card-title">{{ ciudad.nombre }}</h5>
+                <p class="card-text">{{ ciudad.descripcion }}</p>
+                <h6 class="card-subtitle mb-2 text-muted">Gimnasio de {{ ciudad.gimnasio.lider }}</h6>
+                <p class="card-text">{{ ciudad.gimnasio.descripcion }}</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="seccionActiva === 'rutas'" class="row">
+          <div v-for="ruta in data.rutas" :key="ruta.nombre" class="col-md-12 mb-4">
+            <div class="card">
+              <div class="card-body">
+                <h5 class="card-title">{{ ruta.nombre }}</h5>
+                <p class="card-text">{{ ruta.descripcion }}</p>
+                <div class="row">
+                  <div v-for="pokemon in ruta.pokemon" :key="pokemon.nombre" class="col-md-3 mb-4">
+                    <div class="card pokemon-card" @click="obtenerPokemon(pokemon.url)">
+                      <img :src="pokemon.imagen" class="card-img-top" :alt="pokemon.nombre" v-if="pokemon.imagen">
+                      <div class="card-body">
+                        <h5 class="card-title">{{ pokemon.nombre }}</h5>
+                        <p class="card-text">{{ pokemon.tipo.join(', ') }}</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div v-if="pokemonSeleccionado">
+          <div class="modal fade" id="pokemonModal" tabindex="-1" aria-labelledby="pokemonModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="pokemonModalLabel">{{ pokemonSeleccionado.nombre }}</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                  <img :src="pokemonSeleccionado.imagen" class="img-fluid modal-img" :alt="pokemonSeleccionado.nombre">
+                  <p>{{ pokemonSeleccionado.descripcion }}</p>
+                  <p><strong>Tipo:</strong> {{ pokemonSeleccionado.tipo.join(', ') }}</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
-  `,
+    `,
         data() {
           return {
-            seccionActiva: null,
+            seccionActiva: "ciudades", // Establece una sección predeterminada
             data: data,
-            pokemonImagen: "", // URL de la imagen del Pokémon
+            pokemonSeleccionado: null, // Objeto para el Pokémon seleccionado
           };
         },
         methods: {
@@ -393,13 +894,48 @@
             fetch(pokemonUrl)
               .then((response) => response.json())
               .then((data) => {
-                // Asigna la imagen del Pokémon obtenida de la API a la propiedad de tu objeto Pokémon
-                this.pokemonImagen = data.sprites.front_default;
+                this.pokemonSeleccionado = {
+                  nombre:
+                    data.name.charAt(0).toUpperCase() + data.name.slice(1),
+                  tipo: data.types.map(
+                    (type) =>
+                      type.type.name.charAt(0).toUpperCase() +
+                      type.type.name.slice(1)
+                  ),
+                  descripcion:
+                    data.flavor_text_entries.find(
+                      (entry) => entry.language.name === "es"
+                    )?.flavor_text || "Descripción no disponible.",
+                  imagen: data.sprites.front_default,
+                };
+                // Mostrar el modal de Bootstrap
+                $("#pokemonModal").modal("show");
               })
               .catch((error) => {
                 console.error("Error al obtener datos de Pokémon:", error);
               });
           },
+        },
+        mounted() {
+          const urlParams = new URLSearchParams(window.location.search);
+          const section = urlParams.get("section");
+          if (section) {
+            this.mostrarSeccion(section);
+          }
+        },
+        created() {
+          this.data.rutas.forEach((ruta) => {
+            ruta.pokemon.forEach((pokemon) => {
+              fetch(pokemon.url)
+                .then((response) => response.json())
+                .then((data) => {
+                  this.$set(pokemon, "imagen", data.sprites.front_default);
+                })
+                .catch((error) =>
+                  console.error("Error al obtener imagen de Pokémon:", error)
+                );
+            });
+          });
         },
       });
 
@@ -408,5 +944,46 @@
       });
     </script>
     <script src="app.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var navLinks = document.querySelectorAll(
+          ".navbar-nav .nav-link img, .dropdown-menu .dropdown-item"
+        ); // Selecciona las imágenes dentro de los enlaces y los elementos del dropdown
+        var currentLocation = window.location.pathname; // Obtén la ruta actual
+
+        navLinks.forEach((element) => {
+          // Asume que cada imagen tiene un 'alt' que coincide con un identificador único para cada página
+          if (
+            element.tagName === "IMG" &&
+            currentLocation.includes(element.alt.toLowerCase())
+          ) {
+            element.parentNode.classList.add("active"); // Añade la clase 'active' al enlace que contiene la imagen
+          } else if (
+            element.tagName === "A" &&
+            element.dataset.section &&
+            currentLocation.includes("guia.html")
+          ) {
+            // Comprueba si es una sección de la guía y la ruta incluye 'guia.html'
+            const urlParams = new URLSearchParams(window.location.search);
+            const section = urlParams.get("section");
+            if (section === element.dataset.section) {
+              element.classList.add("active"); // Añade la clase 'active' al enlace del dropdown
+            }
+          }
+        });
+
+        // Añade un listener a los elementos del dropdown para que actualicen la URL
+        document.querySelectorAll(".dropdown-item").forEach((item) => {
+          item.addEventListener("click", function (event) {
+            event.preventDefault();
+            const section = this.dataset.section;
+            const url = new URL(window.location);
+            url.searchParams.set("section", section);
+            window.history.pushState({}, "", url);
+            document.querySelector("#vue-app").__vue__.mostrarSeccion(section); // Llama a la función de Vue para mostrar la sección
+          });
+        });
+      });
+    </script>
   </body>
 </html>

@@ -1,5 +1,6 @@
 const itemContent = document.getElementById("itemContent");
 const searchForm = document.getElementById("searchItem");
+const loadingSpinner = document.getElementById("loadingSpinner");
 
 function formatItemName(itemName) {
   return itemName
@@ -85,13 +86,17 @@ const categoryColors = {
 const loadAllItems = async () => {
   let url = `https://pokeapi.co/api/v2/item?limit=50`; // Establece un límite según sea necesario
   let count = 0; // Contador para el número de objetos cargados
+  const itemPromises = []; // Almacenar promesas de fetch
+
+  loadingSpinner.style.display = "flex"; // Mostrar el spinner
+
   do {
     try {
       const res = await fetch(url);
       const data = await res.json();
       for (let itemData of data.results) {
-        if (count >= 400) break; // Detiene la carga si ya se han cargado 200 objetos
-        getItem(itemData.name);
+        if (count >= 400) break; // Detiene la carga si ya se han cargado 400 objetos
+        itemPromises.push(getItem(itemData.name)); // Añadir promesas de fetch al array
         count++; // Incrementa el contador por cada objeto cargado
       }
       url = count >= 400 ? null : data.next; // Detiene la iteración si se alcanza el máximo
@@ -100,6 +105,11 @@ const loadAllItems = async () => {
       break; // Sale del bucle si hay un error de red o de API
     }
   } while (url); // Continúa mientras haya más páginas y no se alcance el máximo
+
+  // Espera a que todas las promesas de fetch se completen
+  await Promise.all(itemPromises);
+
+  loadingSpinner.style.display = "none"; // Ocultar el spinner
 };
 
 const getItem = async (itemName) => {
@@ -161,12 +171,22 @@ window.onclick = function (event) {
   }
 };
 
-searchForm.addEventListener("submit", (e) => {
-  e.preventDefault();
-  const itemName = document.getElementById("item").value;
-  itemContent.innerHTML = ""; // Clear previous results
-  getItem(itemName);
+// Función para buscar y filtrar los objetos por nombre
+document.getElementById("item").addEventListener("input", function () {
+  const searchTerm = this.value.toLowerCase().trim();
+  searchItemsByName(searchTerm);
 });
+
+function searchItemsByName(searchTerm) {
+  const items = document.querySelectorAll(".item-card");
+  items.forEach((item) => {
+    const itemName = item
+      .querySelector(".item-info h3")
+      .innerText.toLowerCase();
+    const matchesName = itemName.includes(searchTerm);
+    item.style.display = matchesName ? "block" : "none";
+  });
+}
 
 document.addEventListener("DOMContentLoaded", loadAllItems); // Carga todos los objetos al cargar la página
 

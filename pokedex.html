@@ -80,6 +80,13 @@
           </p>
         </div>
 
+        <div class="loading-spinner" id="loadingSpinner" style="display: none">
+          <p class="">Pokémon cargando, espera por favor...</p>
+          <div class="spinner-border" role="status">
+            <span class="visually-hidden">Loading...</span>
+          </div>
+        </div>
+
         <div class="filter-container">
           <label for="typeSelect">Filtrar por tipo:</label>
           <select id="typeSelect">
@@ -103,6 +110,15 @@
             <option value="ice">Hielo</option>
             <option value="dark">Oscuro</option>
           </select>
+
+          <label for="searchBar" style="margin-left: 50px"
+            >Buscar por nombre:</label
+          >
+          <input
+            type="text"
+            id="searchBar"
+            placeholder="Escribe el nombre del Pokémon"
+          />
         </div>
 
         <div class="pokedex__header-aline">

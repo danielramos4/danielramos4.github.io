@@ -70,32 +70,29 @@
       </nav>
     </header>
 
-    <div class="items-container">
-      <div class="items__header">
-        <div class="items__header-title">
+    <div class="items-container container">
+      <div class="items__header row">
+        <div class="items__header-title col-12">
           <h1>OBJETOS POKÉMON</h1>
           <p>
             Los objetos son elementos clave en la aventura Pokémon. Pulsa sobre
             uno para ver más información. También puedes filtrar por categoría.
           </p>
         </div>
-        <div class="items__header-search" style="display: none">
-          <form action="" id="searchItem">
-            <input type="text" id="item" />
-            <button>
-              <img
-                src="resources/pokeball.png"
-                alt="pokeball"
-                height="40px"
-                width="auto"
-              />
-            </button>
+        <div class="items__header-search col-12 mt-3">
+          <form id="searchItem">
+            <input
+              type="text"
+              id="item"
+              class="form-control"
+              placeholder="Buscar por nombre"
+            />
           </form>
         </div>
       </div>
-      <div class="category-filter">
+      <div class="category-filter mt-4">
         <label for="categorySelect">Filtrar por categoría:</label>
-        <select id="categorySelect">
+        <select id="categorySelect" class="form-select">
           <option value="all">Todas</option>
           <option value="34">PokeBalls Normales</option>
           <option value="33">PokeBalls Especiales</option>
@@ -121,7 +118,7 @@
     </div>
 
     <!-- Modal para Detalles del Objeto -->
-    <div id="itemModal" class="item-modal" style="display: none">
+    <div id="itemModal" class="item-modal">
       <div class="item-modal-content">
         <span class="close">&times;</span>
         <h3 id="itemName"></h3>
@@ -130,7 +127,7 @@
       </div>
     </div>
 
-    <footer class="bg-dark text-white">
+    <footer class="bg-dark text-white mt-5">
       <div class="container py-4">
         <div class="row">
           <div class="col-md-4">
@@ -169,6 +166,12 @@
         </div>
       </div>
     </footer>
+
+    <div id="loadingSpinner" class="loading-spinner" style="display: none">
+      <div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+      </div>
+    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="items.js"></script>

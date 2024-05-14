@@ -118,7 +118,6 @@ main {
   display: flex;
   justify-content: center;
   align-items: start;
-  gap: 60px;
   margin: 0 auto;
   padding: 20px;
   max-width: 1200px;
@@ -924,4 +923,79 @@ h5 {
   display: flex;
   flex-direction: column;
   justify-content: space-between; /* Espacia los elementos internos justificadamente */
+}
+
+#searchBar {
+  margin-left: 10px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.041);
+  z-index: 9999;
+}
+
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+#itemModal {
+  display: none;
+  position: fixed;
+  z-index: 10000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+.item-modal-content {
+  background-color: #201253;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  position: relative;
+}
+
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.card-img-top {
+  max-height: 200px;
+  object-fit: cover;
+}
+
+.modal-body img {
+  display: block;
+  margin: 0 auto;
+}
+
+.selected {
+  border-bottom: 3px solid #007bff;
 }
