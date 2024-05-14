@@ -141,14 +141,14 @@ main {
 
 /* Estilos para títulos y párrafos */
 h1 {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
   color: #fffbfc;
   animation: fadeInUp 1.5s ease-out;
 }
 
 h3 {
-  font-size: 24px;
+  font-size: 30px;
   font-weight: bold;
   color: #fffbfc;
   margin-bottom: 50px;
@@ -157,7 +157,7 @@ h3 {
 }
 
 p {
-  font-size: 16px;
+  font-size: 26px;
   line-height: 1.5;
   animation: fadeInUp 1.5s ease-out;
 }
@@ -208,11 +208,12 @@ footer {
 /* Si tienes links dentro de tu footer-box y quieres asegurarte de que sean visibles */
 .footer-box a.text-white {
   text-decoration: none; /* Remueve el subrayado */
+  font-size: 24px;
 }
 
 .footer-box a.text-white:hover {
-  font-size: 18px; /* Increase the font size on hover */
-  transition: font-size 0.3s ease; /* Add a transition for smoother animation */
+  font-size: 32px; /* Increase the font size on hover */
+  transition: font-size 0.5s ease; /* Add a transition for smoother animation */
 }
 
 /* Media queries para responsividad */
